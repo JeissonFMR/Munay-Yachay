@@ -1,0 +1,492 @@
+<!-- Formato Carnavalito -->
+<section id="striped-row-form-layouts">
+
+  <!-- pendiente: la secciòn opcional que tipos de campos lleva, es necesario implementar la carga de archivos?, cuantos proyectos puede registrar un usuario? -->
+
+
+  <div class="card card-munay"
+    style="background-image: url('../../../assets/img/munay/recursos/banner-sintillaRecurso-8.png'); background-repeat: repeat-x;">
+
+    <!-- <div class="card-img overlap">
+      <div class="row justify-content-center">
+        <div class="col-xs-8 col-sm-6 col-md-6 col-lg-6 mx-auto">
+          <img alt="" class="img-fluid animated fade-in-up" src="assets/img/munay/titulos/CARNAVALITO_2.png">
+        </div>
+      </div>
+    </div> -->
+
+
+    <div class="row text-left" *ngIf="oculta">
+      <div class="col-md-12">
+        <div class="card">
+
+          <div class="card-header animated fade-in-down">
+            <h4 class="card-title text-center" id="striped-row-layout-basic">
+              <i class="fa fa-users" aria-hidden="true"></i>
+              Administración de Usuarios
+            </h4>
+            <hr>
+          </div>
+
+
+          <div class="card-body">
+            <div class="container">
+              <div class="row">
+                <button class="mx-auto col-md-4 btn btn-raised btn-deep-orange animated fade-in-down"
+                  (click)="opcionNuevo()">
+                  Nuevo Usuario
+                </button>
+              </div>
+            </div>
+
+            <div class="container" *ngIf="cargando">
+              <div class="row">
+                <div class="col-md-12">
+                  <mat-progress-bar mode="query"></mat-progress-bar>
+                </div>
+              </div>
+            </div>
+
+            <div class="container-fluid">
+
+              <div class="row">
+                <div class="col-12">
+                  <div class="table-responsive mat-elevation-z3 animated fade-in-down">
+
+                    <mat-table [dataSource]="dataSource" matSort class="table table-full-width px-3">
+
+                      <ng-container matColumnDef="identificacion">
+                        <mat-header-cell *matHeaderCellDef mat-sort-header class="bg-primary text-white">
+                          <strong>Identificación</strong>
+                        </mat-header-cell>
+                        <mat-cell *matCellDef="let element">
+                          {{element.identificacion}}
+                        </mat-cell>
+                      </ng-container>
+
+                      <ng-container matColumnDef="nombre">
+                        <mat-header-cell *matHeaderCellDef mat-sort-header class="bg-primary text-white">
+                          <strong>Nombre Completo</strong>
+                        </mat-header-cell>
+                        <mat-cell *matCellDef="let element">
+                          {{element.nombres + ' ' + element.apellidos}}
+                        </mat-cell>
+                      </ng-container>
+
+                      <ng-container matColumnDef="email">
+                        <mat-header-cell *matHeaderCellDef mat-sort-header class="bg-primary text-white">
+                          <strong>Email</strong>
+                        </mat-header-cell>
+                        <mat-cell *matCellDef="let element">
+                          {{element.email}}
+                        </mat-cell>
+                      </ng-container>
+
+                      <ng-container matColumnDef="role">
+                        <mat-header-cell *matHeaderCellDef mat-sort-header class="bg-primary text-white">
+                          <strong>Role</strong>
+                        </mat-header-cell>
+                        <mat-cell *matCellDef="let element">
+                          {{element.role.nombre}}
+                        </mat-cell>
+                      </ng-container>
+
+                      <ng-container matColumnDef="img">
+                        <mat-header-cell *matHeaderCellDef mat-sort-header class="bg-primary text-white">
+                          <strong>Imagen</strong>
+                        </mat-header-cell>
+                        <mat-cell *matCellDef="let element">
+                          {{element.img.nombre}}
+                        </mat-cell>
+                      </ng-container>
+
+                      <ng-container matColumnDef="telefono">
+                        <mat-header-cell *matHeaderCellDef mat-sort-header class="bg-primary text-white">
+                          <strong>Teléfono</strong>
+                        </mat-header-cell>
+                        <mat-cell *matCellDef="let element">
+                          {{element.telefono}}
+                        </mat-cell>
+                      </ng-container>
+
+                      <ng-container matColumnDef="direccion">
+                        <mat-header-cell *matHeaderCellDef mat-sort-header class="bg-primary text-white">
+                          <strong>Dirección</strong>
+                        </mat-header-cell>
+                        <mat-cell *matCellDef="let element">
+                          {{element.direccion}}
+                        </mat-cell>
+                      </ng-container>
+
+                      <ng-container matColumnDef="activo">
+                        <mat-header-cell *matHeaderCellDef mat-sort-header class="bg-primary text-white">
+                          <strong>Activo</strong>
+                        </mat-header-cell>
+                        <mat-cell *matCellDef="let element">
+                          {{(element.activo === true) ? 'Si': 'No'}}
+                        </mat-cell>
+                      </ng-container>
+
+                      <ng-container matColumnDef="entidad">
+                        <mat-header-cell *matHeaderCellDef mat-sort-header class="bg-primary text-white">
+                          <strong>Entidad</strong>
+                        </mat-header-cell>
+                        <mat-cell *matCellDef="let element">
+                          {{element.entidad}}
+                        </mat-cell>
+                      </ng-container>
+
+
+
+                      <ng-container matColumnDef="actions" stickyEnd>
+                        <mat-header-cell *matHeaderCellDef mat-sort-header class="bg-primary mat-elevation-z3 text-white"> <strong>
+                            Acciones </strong> </mat-header-cell>
+                        <mat-cell *matCellDef="let element ; let i=index">
+
+                          <button mat-icon-button matTooltip="Editar Usuario" type="button" class="btn btn-purple"
+                            (click)="opcionEditar(element)">
+                            <i class="material-icons ">edit</i>
+                          </button>
+
+                          <button mat-icon-button matTooltip="Eliminar Usuario" type="button" class="btn btn-red"
+                            (click)="idUsuarioEliminar = element._id; open(content);">
+                            <i class="material-icons ">delete</i>
+                          </button>
+
+                        </mat-cell>
+                      </ng-container>
+
+                      <mat-header-row *matHeaderRowDef="cabecerasColumnas"></mat-header-row>
+                      <mat-row *matRowDef="let row; columns: cabecerasColumnas;"></mat-row>
+                    </mat-table>
+
+                    <mat-paginator #paginator [pageSize]="10" [pageSizeOptions]="[10, 20, 30]"
+                      [showFirstLastButtons]="true">
+                    </mat-paginator>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+
+            <ng-template #content let-c="close" let-d="dismiss">
+              <div class="modal-header bg-primary">
+                <h4 class="modal-title text-white text-center" id="modal-basic-title">Confirmación</h4>
+                <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <p class="text-center">¿Está seguro de eliminar este usuario?</p>
+                <hr class="my-3">
+                <div class="container">
+                  <div class="row justify-content-between">
+                    <button type="button" class="btn btn-outline-danger col-md-4 mx-auto" (click)="d('')">No</button>
+                    <button type="button" class="btn btn-outline-success col-md-4 mx-auto"
+                      (click)="c(''); eliminarUsuario();">Si</button>
+                  </div>
+                </div>
+              </div>
+
+            </ng-template>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- <div class="row text-left" *ngIf="!oculta">
+      <div class="col-md-12">
+
+
+
+      </div>
+    </div> -->
+
+  </div>
+
+  <div class="row text-left" *ngIf="!oculta">
+    <div class="col-12">
+      <div class="card card-munay bg-purple-munay"
+        style="background-image: url('../../../assets/img/munay/textura/sintilla_foother_card3.png'); background-repeat: repeat-x; background-position: bottom;">
+
+        <div class="card-img overlap text-center">
+          <img alt="element 06" class="mb-1 img-fluid"
+            [src]=" (imgPersonaje.genero === '') ? 'assets/img/portrait/avatars/SOLO_1.png': url +'/img/personajes/' + imgPersonaje.genero + '/'+ imgPersonaje.nombre"
+            width="160">
+        </div>
+
+        <div class="card-header my-2">
+          <h4 class="card-title text-center white">Formulario de Registro de Usuarios</h4>
+        </div>
+
+        <div class="card-body">
+          <div class="card-block">
+
+            <mat-horizontal-stepper style="background-color: transparent;" linear #stepper>
+
+              <mat-step errorMessage="a">
+                <ng-template matStepLabel>
+                  <span class="text-white">Avatar</span>
+                </ng-template>
+
+                <div class="row text-center my-3">
+                  <div class="col-6">
+                    <a (click)="consultarImagenes()">
+                      <img src="assets/img/munay/logos/masc_icon.png" width="50" class="img-fluid" alt="icon_masc">
+                    </a>
+                  </div>
+                  <div class="col-6">
+                    <a (click)="consultarImagenes('femenino')">
+                      <img src="assets/img/munay/logos/fem_icon.png" width="50" class="img-fluid" alt="icon_fem">
+                    </a>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-4 col-md-4 text-center mt-3" *ngFor="let img of personajes">
+                    <a (click)="seleccionarPersonaje(img)">
+                      <img id="personaje" width="100px" class="img-fluid"
+                        [src]=" url +'/img/personajes/' + img.genero + '/'+ img.nombre" alt="">
+                    </a>
+                    <br>
+                    <i class="fa fa-check fa-3x text-danger" aria-hidden="true" *ngIf="imgPersonaje === img"></i>
+                    <!-- <hr style="width: 30%; border: 3px solid #FF5722; border-radius: 1px;" *ngIf="imgPersonaje === img"> -->
+                  </div>
+                </div>
+
+
+                <div class="row justify-content-between">
+                  <a (click)="opcionCancelar()" class="btn btn-raised mt-4 col-md-3 shadow-z-2 btn-warning text-white">
+                    <i class="fa fa-chevron-left" aria-hidden="true"></i> Volver
+                  </a>
+
+                  <button class="btn btn-raised mt-4 col-md-3 shadow-z-2 btn-danger text-white" matStepperNext>
+                    Siguiente <i class="fa fa-chevron-right" aria-hidden="true"></i>
+                  </button>
+                </div>
+
+              </mat-step>
+
+              <mat-step [stepControl]="primerFormulario" errorMessage="Debe llenar todos los campos.">
+                <form [formGroup]="primerFormulario">
+                  <ng-template matStepLabel>
+                    <span class="text-white">Información Personal</span>
+                  </ng-template>
+
+                  <div class="row">
+                    <div class="col-md-6">
+                      <div class="form-group">
+                        <label class="white" for="nombres">Nombres</label>
+                        <input type="text" class="form-control round" id="nombres" name="nombres"
+                          formControlName="nombres" required>
+
+                        <small class="form-text text-muted danger" *ngIf="!primerFormulario.get('nombres').
+    valid && (primerFormulario.get('nombres').
+    dirty || primerFormulario.get('nombres').touched)">
+                          El nombre es requerido
+                        </small>
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="form-group">
+                        <label class="white" for="apellidos">Apellidos</label>
+                        <input type="text" class="form-control round" id="apellidos" name="apellidos"
+                          formControlName="apellidos">
+
+                        <small class="form-text text-muted danger" *ngIf="!primerFormulario.get('apellidos').
+    valid && (primerFormulario.get('apellidos').
+    dirty || primerFormulario.get('apellidos').touched)">
+                          Los apellidos son requeridos
+                        </small>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="row">
+                    <div class="col-md-6">
+                      <div class="form-group">
+                        <label class="white" for="identificacion">Identificación</label>
+                        <input type="text" class="form-control round" id="identificacion" name="identificacion"
+                          formControlName="identificacion">
+
+                        <small class="form-text text-muted danger" *ngIf="!primerFormulario.get('identificacion').
+    valid && (primerFormulario.get('identificacion').
+    dirty || primerFormulario.get('identificacion').touched)">
+                          La identificación es requerida
+                        </small>
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="form-group">
+                        <label class="white" for="telefono">Teléfono</label>
+                        <input type="text" class="form-control round" id="telefono" name="telefono"
+                          formControlName="telefono">
+
+                        <small class="form-text text-muted danger" *ngIf="!primerFormulario.get('telefono').
+    valid && (primerFormulario.get('telefono').
+    dirty || primerFormulario.get('telefono').touched)">
+                          El teléfono es requerido
+                        </small>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="row">
+
+                    <div class="form-group col-md-6 mb-2">
+                      <label class="white" for="direccion">Role</label>
+                      <select id="role" name="role" formControlName="role" class="form-control border-primary round">
+
+                        <option [value]="role._id" *ngFor="let role of roles">{{role.nombre}}</option>
+                      </select>
+
+                      <small class="form-text text-muted danger" *ngIf="!primerFormulario.get('role').
+                      valid && (primerFormulario.get('role').
+                      dirty || primerFormulario.get('role').touched)">
+                        El role es requerido
+                      </small>
+                    </div>
+
+                    <div class="col-md-6">
+                      <div class="form-group">
+                        <label class="white" for="direccion">Dirección</label>
+                        <input type="text" class="form-control round" id="direccion" name="direccion"
+                          formControlName="direccion">
+
+                        <small class="form-text text-muted danger" *ngIf="!primerFormulario.get('direccion').
+    valid && (primerFormulario.get('direccion').
+    dirty || primerFormulario.get('direccion').touched)">
+                          La dirección es requerida
+                        </small>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="row justify-content-between">
+                    <button class="btn btn-raised mt-4 col-md-3 shadow-z-2 btn-warning text-white" matStepperPrevious>
+                      <i class="fa fa-chevron-left" aria-hidden="true"></i> Atras
+                    </button>
+
+
+                    <button class="btn btn-raised mt-4 col-md-3 shadow-z-2 btn-danger text-white" matStepperNext
+                      (click)="validar(1)">
+                      Siguiente <i class="fa fa-chevron-right" aria-hidden="true"></i>
+                    </button>
+                  </div>
+                </form>
+              </mat-step>
+              <mat-step [stepControl]="segundoFormulario" errorMessage="Debe llenar todos los campos">
+                <form [formGroup]="segundoFormulario">
+                  <ng-template matStepLabel>
+                    <span class="text-white">Información Interna</span>
+                  </ng-template>
+                  <div>
+                    <div class="row">
+                      <div class="col-md-6">
+                        <div class="form-group">
+                          <label class="white" for="entidad">Entidad</label>
+                          <input type="text" class="form-control round" id="entidad" name="entidad"
+                            formControlName="entidad">
+
+                          <small class="form-text text-muted danger" *ngIf="!segundoFormulario.get('entidad').
+    valid && (segundoFormulario.get('entidad').
+    dirty || segundoFormulario.get('entidad').touched)">
+                            La entidad es requerida
+                          </small>
+                        </div>
+                      </div>
+
+                      <div class="col-md-6">
+                        <div class="form-group">
+                          <label class="white" for="email">Correo</label>
+                          <input type="email" class="form-control round" id="email" name="email"
+                            formControlName="email">
+
+                          <small class="form-text text-muted danger" *ngIf="segundoFormulario.get('email').hasError('required') 
+          && (segundoFormulario.get('email').dirty || segundoFormulario.get('email').touched)">
+                            El email es requerido
+                          </small>
+
+                          <small class="form-text text-muted danger"
+                            *ngIf="segundoFormulario.get('email').hasError('email')">
+                            Introduzca un email válido
+                          </small>
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- <div class="row mb-3">
+                      <div class="col-md-6">
+                        <a href="javascript:void(0)" (click)="cambiarContrasenia = !cambiarContrasenia">
+                          {{ (cambiarContrasenia) ? 'Cancelar' : '¿Desea cambiar su contraseña?'}}</a>
+                      </div>
+                    </div> -->
+
+
+                    <div class="row">
+                      <div class="col-md-6">
+                        <div class="form-group">
+                          <label class="white" for="password1">Contraseña *</label>
+                          <input type="password" class="form-control round" id="password1" name="password1"
+                            formControlName="password1">
+
+                          <small class="form-text text-muted danger"
+                            *ngIf="!segundoFormulario.get('password1').valid && (segundoFormulario.get('password1').dirty || segundoFormulario.get('password1').touched)">
+                            Digite una contraseña
+                          </small>
+                        </div>
+                      </div>
+
+                      <div class="col-md-6">
+                        <div class="form-group">
+                          <label class="white" for="password2">Confirmar Contraseña *</label>
+                          <input type="password" class="form-control round" id="password2" name="password2"
+                            formControlName="password2">
+
+                          <small class="form-text text-muted danger"
+                            *ngIf="!segundoFormulario.get('password2').valid && (segundoFormulario.get('password2').dirty || segundoFormulario.get('password2').touched)">
+                            Digite una contraseña
+                          </small>
+
+                          <small class="form-text text-muted danger" *ngIf="!segundoFormulario.get('password2').valid && (segundoFormulario.get('password2').dirty || segundoFormulario.get('password2').touched)
+          || (segundoFormulario.value.password1 !== segundoFormulario.value.password2)">
+                            Las contraseñas no coinciden
+                          </small>
+                        </div>
+                      </div>
+
+                    </div>
+                  </div>
+
+                  <div class="row justify-content-between">
+                    <button class="btn btn-raised mt-4 col-md-3 shadow-z-2 btn-warning text-white" matStepperPrevious>
+                      <i class="fa fa-chevron-left" aria-hidden="true"></i> Atras
+                    </button>
+
+
+                    <button class="btn btn-raised mt-4 col-md-3 shadow-z-2 btn-success text-white" matStepperNext
+                      (click)="guardarCambios()">
+                      Guardar <i class="fa fa-save" aria-hidden="true"></i>
+                    </button>
+                  </div>
+
+                </form>
+              </mat-step>
+              <!-- <mat-step>
+  <ng-template matStepLabel>Done</ng-template>
+  You are now done.
+  <div>
+  <button mat-button matStepperPrevious>Back</button>
+  <button mat-button (click)="stepper.reset()">Reset</button>
+  </div>
+  </mat-step> -->
+            </mat-horizontal-stepper>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- // Formato Carnavalito end -->

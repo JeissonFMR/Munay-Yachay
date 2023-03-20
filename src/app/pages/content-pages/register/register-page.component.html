@@ -1,0 +1,263 @@
+<div class="main-pane justify-content-center">
+  <div class="main-content mx-auto">
+    <div class="container">
+
+      <section id="icon-tabs">
+        <div class="row text-left">
+          <div class="col-12">
+            <div class="card card-munay bg-purple-munay mt-5" style="background-image: url('../../../assets/img/munay/textura/sintilla_foother_card3.png'); background-repeat: repeat-x; background-position: bottom;">
+
+              <div class="card-img overlap text-center">
+                <img alt="element 06" class="mb-1 img-fluid" [src]=" (imgPersonaje.genero === '') ? 'assets/img/portrait/avatars/SOLO_1.png': url +'/img/personajes/' + imgPersonaje.genero + '/'+ imgPersonaje.nombre"
+                  width="160">
+              </div>
+
+              <div class="card-header my-2">
+                <h4 class="card-title text-center white">Formulario de Registro</h4>
+              </div>
+              <div class="card-body">
+                <div class="card-block">
+
+                  <mat-horizontal-stepper style="background-color: transparent;" linear #stepper>
+
+                    <mat-step errorMessage="a">
+                      <ng-template matStepLabel>
+                        <span class="text-white">Avatar</span>
+                      </ng-template>
+
+                      <div class="row text-center my-3">
+                        <div class="col-6">
+                          <a (click)="consultarImagenes()">
+                            <img src="assets/img/munay/logos/masc_icon.png" width="50" class="img-fluid" alt="icon_masc">
+                          </a>
+                        </div>
+                        <div class="col-6">
+                          <a (click)="consultarImagenes('femenino')">
+                            <img src="assets/img/munay/logos/fem_icon.png" width="50" class="img-fluid" alt="icon_fem">
+                          </a>
+                        </div>
+                      </div>
+
+                      <div class="row">
+                        <div class="col-4 col-md-4 text-center mt-3" *ngFor="let img of personajes">
+                          <a (click)="seleccionarPersonaje(img)">
+                            <img id="personaje" width="100px" class="img-fluid" [src]=" url +'/img/personajes/' + img.genero + '/'+ img.nombre"
+                              alt="">
+                          </a>
+                          <br>
+                          <i class="fa fa-check fa-3x text-danger" aria-hidden="true" *ngIf="imgPersonaje === img"></i>
+                          <!-- <hr style="width: 30%; border: 3px solid #FF5722; border-radius: 1px;" *ngIf="imgPersonaje === img"> -->
+                        </div>
+                      </div>
+
+
+                      <div class="row justify-content-between">
+                        <a [routerLink]="['/pages/login']" class="btn btn-raised mt-4 col-md-3 shadow-z-2 btn-warning text-white">
+                          <i class="fa fa-chevron-left" aria-hidden="true"></i> Volver
+                        </a>
+
+
+                        <button class="btn btn-raised mt-4 col-md-3 shadow-z-2 btn-danger text-white" matStepperNext>
+                          Siguiente <i class="fa fa-chevron-right" aria-hidden="true"></i>
+                        </button>
+                      </div>
+
+                    </mat-step>
+
+                    <mat-step [stepControl]="primerFormulario" errorMessage="Debe llenar todos los campos.">
+                      <form [formGroup]="primerFormulario">
+                        <ng-template matStepLabel>
+                          <span class="text-white">Información Personal</span>
+                        </ng-template>
+
+                        <div class="row">
+                          <div class="col-md-6">
+                            <div class="form-group">
+                              <label class="white" for="nombres">Nombres</label>
+                              <input type="text" class="form-control round" id="nombres" name="nombres" formControlName="nombres"
+                                required>
+
+                              <small class="form-text text-muted danger" *ngIf="!primerFormulario.get('nombres').
+                          valid && (primerFormulario.get('nombres').
+                          dirty || primerFormulario.get('nombres').touched)">
+                                El nombre es requerido
+                              </small>
+                            </div>
+                          </div>
+                          <div class="col-md-6">
+                            <div class="form-group">
+                              <label class="white" for="apellidos">Apellidos</label>
+                              <input type="text" class="form-control round" id="apellidos" name="apellidos"
+                                formControlName="apellidos">
+
+                              <small class="form-text text-muted danger" *ngIf="!primerFormulario.get('apellidos').
+                          valid && (primerFormulario.get('apellidos').
+                          dirty || primerFormulario.get('apellidos').touched)">
+                                Los apellidos son requeridos
+                              </small>
+                            </div>
+                          </div>
+                        </div>
+
+                        <div class="row">
+                          <div class="col-md-6">
+                            <div class="form-group">
+                              <label class="white" for="identificacion">Identificación</label>
+                              <input type="text" class="form-control round" id="identificacion" name="identificacion"
+                                formControlName="identificacion">
+
+                              <small class="form-text text-muted danger" *ngIf="!primerFormulario.get('identificacion').
+                          valid && (primerFormulario.get('identificacion').
+                          dirty || primerFormulario.get('identificacion').touched)">
+                                La identificación es requerida
+                              </small>
+                            </div>
+                          </div>
+                          <div class="col-md-6">
+                            <div class="form-group">
+                              <label class="white" for="telefono">Teléfono</label>
+                              <input type="text" class="form-control round" id="telefono" name="telefono"
+                                formControlName="telefono">
+
+                              <small class="form-text text-muted danger" *ngIf="!primerFormulario.get('telefono').
+                          valid && (primerFormulario.get('telefono').
+                          dirty || primerFormulario.get('telefono').touched)">
+                                El teléfono es requerido
+                              </small>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col-md-12">
+                            <div class="form-group">
+                              <label class="white" for="direccion">Dirección</label>
+                              <input type="text" class="form-control round" id="direccion" name="direccion"
+                                formControlName="direccion">
+
+                              <small class="form-text text-muted danger" *ngIf="!primerFormulario.get('direccion').
+                          valid && (primerFormulario.get('direccion').
+                          dirty || primerFormulario.get('direccion').touched)">
+                                La dirección es requerida
+                              </small>
+                            </div>
+                          </div>
+                        </div>
+
+                        <div class="row justify-content-between">
+                          <button class="btn btn-raised mt-4 col-md-3 shadow-z-2 btn-warning text-white"
+                            matStepperPrevious>
+                            <i class="fa fa-chevron-left" aria-hidden="true"></i> Atras
+                          </button>
+
+
+                          <button class="btn btn-raised mt-4 col-md-3 shadow-z-2 btn-danger text-white" matStepperNext
+                            (click)="validar(1)">
+                            Siguiente <i class="fa fa-chevron-right" aria-hidden="true"></i>
+                          </button>
+                        </div>
+                      </form>
+                    </mat-step>
+                    <mat-step [stepControl]="segundoFormulario" errorMessage="Debe llenar todos los campos">
+                      <form [formGroup]="segundoFormulario">
+                        <ng-template matStepLabel>
+                          <span class="text-white">Información Interna</span>
+                        </ng-template>
+                        <div>
+                          <div class="row">
+                            <div class="col-md-6">
+                              <div class="form-group">
+                                <label class="white" for="entidad">Entidad</label>
+                                <input type="text" class="form-control round" id="entidad" name="entidad"
+                                  formControlName="entidad">
+
+                                <small class="form-text text-muted danger" *ngIf="!segundoFormulario.get('entidad').
+                          valid && (segundoFormulario.get('entidad').
+                          dirty || segundoFormulario.get('entidad').touched)">
+                                  La entidad es requerida
+                                </small>
+                              </div>
+                            </div>
+
+                            <div class="col-md-6">
+                              <div class="form-group">
+                                <label class="white" for="email">Correo</label>
+                                <input type="email" class="form-control round" id="email" name="email" formControlName="email">
+
+                                <small class="form-text text-muted danger" *ngIf="segundoFormulario.get('email').hasError('required') 
+                                && (segundoFormulario.get('email').dirty || segundoFormulario.get('email').touched)">
+                                  El email es requerido
+                                </small>
+
+                                <small class="form-text text-muted danger" *ngIf="segundoFormulario.get('email').hasError('email')">
+                                  Introduzca un email válido
+                                </small>
+                              </div>
+                            </div>
+                          </div>
+
+                          <div class="row">
+                            <div class="col-md-6">
+                              <div class="form-group">
+                                <label class="white" for="password1">Contraseña</label>
+                                <input type="password" class="form-control round" id="password1" name="password1"
+                                  formControlName="password1">
+
+                                <small class="form-text text-muted danger" *ngIf="!segundoFormulario.get('password1').valid && (segundoFormulario.get('password1').dirty || segundoFormulario.get('password1').touched)">
+                                  Digite una contraseña
+                                </small>
+                              </div>
+                            </div>
+
+                            <div class="col-md-6">
+                              <div class="form-group">
+                                <label class="white" for="password2">Confirmar Contraseña</label>
+                                <input type="password" class="form-control round" id="password2" name="password2"
+                                  formControlName="password2">
+
+                                <small class="form-text text-muted danger" *ngIf="!segundoFormulario.get('password2').valid && (segundoFormulario.get('password2').dirty || segundoFormulario.get('password2').touched)">
+                                  Digite una contraseña
+                                </small>
+
+                                <small class="form-text text-muted danger" *ngIf="!segundoFormulario.get('password2').valid && (segundoFormulario.get('password2').dirty || segundoFormulario.get('password2').touched)
+                                || (segundoFormulario.value.password1 !== segundoFormulario.value.password2)">
+                                  Las contraseñas no coinciden
+                                </small>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+
+                        <div class="row justify-content-between">
+                          <button class="btn btn-raised mt-4 col-md-3 shadow-z-2 btn-warning text-white"
+                            matStepperPrevious>
+                            <i class="fa fa-chevron-left" aria-hidden="true"></i> Atras
+                          </button>
+
+
+                          <button class="btn btn-raised mt-4 col-md-3 shadow-z-2 btn-success text-white" matStepperNext
+                            (click)="registrarUsuario()">
+                            Registrar <i class="fa fa-save" aria-hidden="true"></i>
+                          </button>
+                        </div>
+
+                      </form>
+                    </mat-step>
+                    <!-- <mat-step>
+                      <ng-template matStepLabel>Done</ng-template>
+                      You are now done.
+                      <div>
+                        <button mat-button matStepperPrevious>Back</button>
+                        <button mat-button (click)="stepper.reset()">Reset</button>
+                      </div>
+                    </mat-step> -->
+                  </mat-horizontal-stepper>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </div>
+  </div>
+</div>

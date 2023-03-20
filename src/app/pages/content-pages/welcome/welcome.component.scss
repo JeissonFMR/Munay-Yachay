@@ -1,0 +1,63 @@
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  position: relative;
+}
+
+.a{
+  // background-color: aqua;
+  position: absolute;
+  width: 40%;
+  height: 40%;
+  bottom: 30%;
+  right: 30%;
+}
+
+.logo{
+  // background-color: red;
+  position: absolute;
+  object-fit: contain;
+}
+
+.upImg{
+  position: absolute;
+  top: 0;
+  width: 60%;
+  height: 80%;
+  left: 0;
+}
+.containerOne{
+  position: absolute;
+  width: 30%;
+  height: 75%;
+}
+
+.containerTwo{
+  position: absolute;
+  width: 30%;
+  height: 75%;
+  bottom: 0%;
+  right: 0%;
+}
+
+.downImg{
+  position: absolute;
+  bottom: 0%;
+  width: 60%;
+  height: 60%;
+  right: 0%;
+}
+
+
+img {
+  // background-size: contain;
+  background-repeat: no-repeat;
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+
