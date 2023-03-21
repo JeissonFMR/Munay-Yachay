@@ -9,6 +9,7 @@ import { LoginPageComponent } from './login/login-page.component';
 import { MaintenancePageComponent } from './maintenance/maintenance-page.component';
 import { RegisterPageComponent } from './register/register-page.component';
 import { WelcomeComponent } from './welcome/welcome.component';
+import { SelectionCarnavalComponent } from './selection-carnaval/selection-carnaval.component';
 
 
 const routes: Routes = [
@@ -55,6 +56,13 @@ const routes: Routes = [
         component: WelcomeComponent,
         data: {
           title: 'Welcome Page'
+        }
+      },
+      {
+        path: 'selection-carnaval',
+        component: SelectionCarnavalComponent,
+        data: {
+          title: 'Selection of carnaval'
         }
       },
       {

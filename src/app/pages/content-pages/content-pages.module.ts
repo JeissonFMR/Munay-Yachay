@@ -13,6 +13,7 @@ import { MaintenancePageComponent } from './maintenance/maintenance-page.compone
 import { RegisterPageComponent } from './register/register-page.component';
 import { MaterialModule } from 'app/materialAngular/material/material.module';
 import { WelcomeComponent } from './welcome/welcome.component';
+import { SelectionCarnavalComponent } from './selection-carnaval/selection-carnaval.component';
 
 
 @NgModule({
@@ -31,7 +32,8 @@ import { WelcomeComponent } from './welcome/welcome.component';
         LoginPageComponent,
         MaintenancePageComponent,
         RegisterPageComponent,
-        WelcomeComponent
+        WelcomeComponent,
+        SelectionCarnavalComponent
     ]
 })
 export class ContentPagesModule { }

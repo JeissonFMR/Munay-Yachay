@@ -1,0 +1,38 @@
+.container-fluid::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('../../../../assets/img/welcome/select-carnaval/fondo2.svg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  // z-index: 1;
+}
+
+.imgBtnAcceder{
+  width: 100px;
+  height: 40px;
+  position: absolute;
+  right: 110px;
+}
+
+.contentOne{
+  width: 230px; height: 20px;
+  left: 10px;
+  background-image: url('../../../../assets/img/welcome/select-carnaval/textura.svg');
+  background-size: cover;
+}
+
+.row1{
+  z-index: 2;
+  padding-bottom: 15px;
+  // background-color: rgba(255, 255, 255, 0.8);
+  top: 20px;
+}
+
+.col{
+  // background-color: red;
+  // border: 2px solid red;
+}
