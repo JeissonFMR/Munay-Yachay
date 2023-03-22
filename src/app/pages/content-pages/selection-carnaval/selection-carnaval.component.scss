@@ -1,3 +1,15 @@
+// variables
+$height-img: 300px;
+$width-img: 330px;
+
+//mixins
+@mixin image-properties($width-img, $height-img) {
+  // border: 1px solid blue;
+  width: $width-img;
+  height: $height-img;
+  background-size: cover;
+}
+
 .container-fluid::after {
   content: "";
   position: absolute;
@@ -8,7 +20,7 @@
   background-image: url('../../../../assets/img/welcome/select-carnaval/fondo2.svg');
   background-size: cover;
   background-repeat: no-repeat;
-  // z-index: 1;
+  z-index: 1;
 }
 
 .imgBtnAcceder{
@@ -25,7 +37,7 @@
   background-size: cover;
 }
 
-.row1{
+.row{
   z-index: 2;
   padding-bottom: 15px;
   // background-color: rgba(255, 255, 255, 0.8);
@@ -34,5 +46,25 @@
 
 .col{
   // background-color: red;
-  // border: 2px solid red;
+  // border: 2px solid white;
+}
+
+// TODO: IMAGENES
+.imgOne{
+  @include image-properties($width-img, $height-img);
+  background-image: url('../../../../assets/img/welcome/select-carnaval/imgOne.png');
+}
+
+.imgTwo{
+  @include image-properties($width-img, $height-img);
+  background-image: url('../../../../assets/img/welcome/select-carnaval/imgTwo.png');
+}
+
+.imagenBtns{
+  width: 70%;
+  position: absolute; 
+  left: 0; right: 0; 
+  bottom: 0; 
+  margin-left: auto; 
+  margin-right: auto;
 }
