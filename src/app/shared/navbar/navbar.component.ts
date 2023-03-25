@@ -38,6 +38,6 @@ export class NavbarComponent {
 
     logout() {
         this._usuarioService.logout();
-        this.router.navigate(['pages', 'login']);
+        this.router.navigate(['pages', 'welcome']);
     }
 }

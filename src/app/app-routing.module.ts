@@ -9,6 +9,7 @@ import { CONTENT_ROUTES } from './shared/routes/content-layout.routes';
 
 import { AuthGuard } from './shared/auth/auth-guard.service';
 import { LoginGuard } from './servicios/servicios.index';
+import { MEMORY_ROUTES } from './shared/routes/rutasInit.routes';
 
 const appRoutes: Routes = [
   {
@@ -28,6 +29,14 @@ const appRoutes: Routes = [
     children: Full_ROUTES,
     runGuardsAndResolvers: 'always',
     canActivate: [LoginGuard]
+  },
+  {
+    path: '',
+    // component: FullLayoutComponent,
+    data: { title: 'full Views' },
+    children: MEMORY_ROUTES,
+    // runGuardsAndResolvers: 'always',
+    // canActivate: [LoginGuard]
   },
   { path: '', component: ContentLayoutComponent, data: { title: 'content Views' }, children: CONTENT_ROUTES, canActivate: [AuthGuard] },
 ];

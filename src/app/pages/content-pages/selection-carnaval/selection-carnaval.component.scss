@@ -23,11 +23,10 @@ $width-img: 330px;
   z-index: 1;
 }
 
-.imgBtnAcceder{
-  width: 100px;
-  height: 40px;
-  position: absolute;
-  right: 110px;
+.row{
+  // background-color: red;
+  z-index: 4;
+  margin: 5px;
 }
 
 .contentOne{
@@ -37,19 +36,13 @@ $width-img: 330px;
   background-size: cover;
 }
 
-.row{
-  z-index: 2;
-  padding-bottom: 15px;
-  // background-color: rgba(255, 255, 255, 0.8);
-  top: 20px;
+.imgBtnAcceder{
+  width: 100px;
+  height: 40px;
+  position: absolute;
+  right: 110px;
 }
 
-.col{
-  // background-color: red;
-  // border: 2px solid black;
-}
-
-// TODO: IMAGENES
 .imgOne{
   @include image-properties($width-img, $height-img);
   background-image: url('../../../../assets/img/welcome/select-carnaval/imgOne.png');
@@ -67,4 +60,16 @@ $width-img: 330px;
   bottom: 0; 
   margin-left: auto; 
   margin-right: auto;
+}
+
+.barra{
+  position: fixed;
+  bottom: 0;
+  padding: 10px;
+  width: 50%;
+}
+
+.row1{
+  z-index: 2;
+  height: 80vh
 }
