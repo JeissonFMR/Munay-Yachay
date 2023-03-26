@@ -33,7 +33,7 @@ const appRoutes: Routes = [
   {
     path: '',
     // component: FullLayoutComponent,
-    data: { title: 'full Views' },
+    data: { title: 'memory carnaval' },
     children: MEMORY_ROUTES,
     // runGuardsAndResolvers: 'always',
     // canActivate: [LoginGuard]

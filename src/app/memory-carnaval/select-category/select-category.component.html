@@ -3,31 +3,136 @@
   <div
     class="row position-relative d-flex justify-content-center align-items-center animate__animated animate__backInDown animate">
     <div class="col position-relative d-flex justify-content-center align-items-center flex-wrap">
-      <div class="contorno1 ">
-        <div class="img1 position-relative d-flex align-items-end">
-          <img class="position-relative imgA" src="../../../assets/img/memory-carnaval/images/letters/canto-tierra.svg"
-            alt="">
-        </div>
-      </div>
+      <!-- contorno1 de fondo -->
+      <div class="contorno1 d-flex position-relative">
+        <!-- inicio de carrusel CANTO A LA TIERRA -->
+        <div id="myCarousel" class="carousel slide d-flex" data-ride="carousel">
+          <div class="carousel-inner d-flex">
+            <!-- item activo para mover slider -->
+            <div class="carousel-item active d-flex">
+              <div class="cont1 position-relative d-flex">
+                <img class="img1 position-relative" src="../../../assets/img/memory-carnaval/images/img-cantoTierra.jpg"
+                  alt="canto a la tierra">
+              </div>
+            </div>
 
-      <div class="contorno2">
-        <div class="img2 position-relative d-flex align-items-end">
-          <img class="position-relative imgA" src="../../../assets/img/memory-carnaval/images/letters/desfilemagno.svg"
-            alt="">
-        </div>
-      </div>
+            <!-- sliders a ocupar -->
+            <div class="carousel-item" *ngFor="let item of sliderImagesCantoTierra">
+              <div class="cont1 position-relative d-flex align-items-end">
+                <img class="img1" [src]="item.image" [alt]="item.name">
+              </div>
+            </div>
 
-      <div class="contorno3">
-        <div class="img3 position-relative d-flex align-items-end">
-          <img class="position-relative imgA" src="../../../assets/img/memory-carnaval/images/letters/carnavalito.svg"
-            alt="">
+          </div>
+          <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Anterior</span>
+          </a>
+          <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Siguiente</span>
+          </a>
         </div>
+        <!-- fin de carrusel CANTO A LA TIERRA -->
+
+        <!-- imagen baja letras -->
+        <div class="imagen-estatica d-flex justify-content-center align-items-center">
+          <img class="img-fluid" src="../../../assets/img/memory-carnaval/images/letters/canto-tierra.svg"
+            alt="Imagen estática">
+        </div>
+        <!-- fin imagen letras -->
       </div>
+      <!-- fin contorno1 -->
+
+
+
+      <!-- contorno2 de fondo -->
+      <div class="contorno2 d-flex position-relative">
+        <!-- inicio de carrusel DESFILE MAGNO -->
+        <div id="myCarousel2" class="carousel slide d-flex" data-ride="carousel">
+          <div class="carousel-inner d-flex">
+            <!-- item activo para mover slider -->
+            <div class="carousel-item active d-flex">
+              <div class="cont1 position-relative d-flex">
+                <img class="img2 position-relative"
+                  src="../../../assets/img/memory-carnaval/images/img-desfile-magno.jpg" alt="desfile magno">
+              </div>
+            </div>
+
+            <!-- sliders a ocupar -->
+            <div class="carousel-item" *ngFor="let item of sliderImagesDesfileMagno">
+              <div class="cont1 position-relative d-flex align-items-end">
+                <img class="img2" [src]="item.image" [alt]="item.name">
+              </div>
+            </div>
+
+          </div>
+          <a class="carousel-control-prev" href="#myCarousel2" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Anterior</span>
+          </a>
+          <a class="carousel-control-next" href="#myCarousel2" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Siguiente</span>
+          </a>
+        </div>
+        <!-- fin de carrusel DESFILE MAGNO -->
+
+        <!-- imagen baja letras -->
+        <div class="imagen-estatica d-flex justify-content-center align-items-center">
+          <img class="img-fluid" src="../../../assets/img/memory-carnaval/images/letters/desfilemagno.svg"
+            alt="Imagen estática">
+        </div>
+        <!-- fin imagen letras -->
+      </div>
+      <!-- fin contorno2 -->
+
+
+
+      <!-- contorno3 de fondo -->
+      <div class="contorno3 d-flex position-relative">
+        <!-- inicio de carrusel CARNAVALITO -->
+        <div id="myCarousel3" class="carousel slide d-flex" data-ride="carousel">
+          <div class="carousel-inner d-flex">
+            <!-- item activo para mover slider -->
+            <div class="carousel-item active d-flex">
+              <div class="cont1 position-relative d-flex">
+                <img class="img3 position-relative" src="../../../assets/img/memory-carnaval/images/img-carnavalito.jpg"
+                  alt="desfile magno">
+              </div>
+            </div>
+
+            <!-- sliders a ocupar -->
+            <div class="carousel-item" *ngFor="let item of sliderImagesCarnavalito">
+              <div class="cont1 position-relative d-flex align-items-end">
+                <img class="img3" [src]="item.image" [alt]="item.name">
+              </div>
+            </div>
+
+          </div>
+          <a class="carousel-control-prev" href="#myCarousel3" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Anterior</span>
+          </a>
+          <a class="carousel-control-next" href="#myCarousel3" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Siguiente</span>
+          </a>
+        </div>
+        <!-- fin de carrusel CARNAVALITO -->
+
+        <!-- imagen baja letras -->
+        <div class="imagen-estatica d-flex justify-content-center align-items-center">
+          <img class="img-fluid" src="../../../assets/img/memory-carnaval/images/letters/carnavalito.svg"
+            alt="Imagen estática">
+        </div>
+        <!-- fin imagen letras -->
+      </div>
+      <!-- fin contorno3 -->
     </div>
+
+
+
+    <img class="position-absolute barra" src="../../../../assets/img/welcome/barraAzul.svg" alt="" srcset="">
+
   </div>
-
-
-
-  <img class="position-absolute barra" src="../../../../assets/img/welcome/barraAzul.svg" alt="" srcset="">
-
-</div>

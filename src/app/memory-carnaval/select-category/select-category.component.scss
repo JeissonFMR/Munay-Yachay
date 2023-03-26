@@ -1,8 +1,8 @@
 //mixins
-@mixin image-properties-personas($width-img, $height-img) {
-  width: $width-img;
-  height: $height-img;
-  background-size: cover;
+@mixin image-properties-slider() {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 @mixin contornos() {
@@ -29,14 +29,13 @@
   background-repeat: no-repeat;
   z-index: 1;
 }
-.img1:hover, .img2:hover, .img3:hover {
-  transform: scale(1.3);
-}
+
 .row{
   z-index: 2;
   top: 50%;
   height: 100vh
 }
+
 .barra{
   z-index: 2;
   position: fixed;
@@ -44,7 +43,9 @@
   padding: 20px;
   width: 50%;
 }
+
 .contorno1{
+  // border: 1px solid white;
   background-image: url('../../../assets/img/memory-carnaval/contornos/contorno-canto-tierra.svg');
   @include contornos();
 }
@@ -59,25 +60,35 @@
   @include contornos()
 }
 
-.img1{
+.cont1{
+  width: 100%; /* ancho del div */
+  height: 100%; /* altura del div */
+  position: relative; /* establecer la posición del div como relativa */
+}
+
+.imagen-estatica {
+  position: absolute;
+  bottom: 0;
+}
+
+.img-fluid {
+  width:80%;
+  height: auto;
+}
+
+.img1 {
   border-radius: 50px 0px 0px 0px;
-  background-image: url('../../../assets/img/memory-carnaval/images/img-cantoTierra.jpg');
-  @include image-properties-personas(100%, 100% );
+  @include image-properties-slider()
 }
 
 .img2{
-  background-image: url('../../../assets/img/memory-carnaval/images/img-desfile-magno.jpg');
-  @include image-properties-personas(100%, 100% )
+  @include image-properties-slider()
 }
 
 .img3{
   border-radius: 0px 50px 0px 0px;
-  background-image: url('../../../assets/img/memory-carnaval/images/img-carnavalito.jpg');
-  @include image-properties-personas(100%, 100% );
-  background-position: center;
+  @include image-properties-slider()
 }
-
-
-// .col{
-//   background-color: red;
-// }
+.img1:hover, .img2:hover, .img3:hover {
+  transform: scale(1.3);
+}

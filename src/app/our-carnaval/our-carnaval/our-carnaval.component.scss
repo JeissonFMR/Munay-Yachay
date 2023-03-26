@@ -1,0 +1,213 @@
+// @import '~@fortawesome/fontawesome-free/css/all.min.css';
+html,
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+#cuerpo{
+  overflow: hidden;
+}
+#fondobody {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: white;
+}
+
+#fondobody img{
+  object-fit: cover;
+}
+
+.contenedor {
+  position: relative;
+  height: 60vh;
+  width: 100vw;
+  overflow: hidden;
+}
+
+#banner {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+#botonhome {
+  position: absolute;
+  top: -11px;
+  left: -17px;
+  width: 120px;
+  height: 150px;
+}
+
+#btninscribete {
+  position: fixed;
+  margin: 0;
+  padding: 0;
+  top: 50%;
+  left: -190px;
+  width: 600px;
+  height: 400px;
+  transform: translateY(-50%);
+  z-index: 2;
+}
+
+#nuestroCarnaval {
+  position: absolute;
+  top: calc(50% - 175px);
+  margin-top: -250px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 750px;
+  height: 650px;
+}
+
+
+#parrafo {
+  position: absolute;
+  top: calc(50% - 175px);
+  /* La mitad de la altura de la div */
+  margin-left: 10px;
+  margin-top: 350px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 375px;
+  text-align: justify;
+}
+
+.container {
+  width: 55%;
+  min-height: 120vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.content {
+  flex: 1;
+  padding: 20px;
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 10px;
+  z-index: 1;
+}
+.footer img {
+  width: 25vw;
+  height: 25vh;
+}
+
+.barrafooter{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 10px;
+  z-index: 1;
+}
+
+.imgfooter{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 10px;
+  z-index: 1;
+}
+
+.imgfooter img {
+  margin-left: 25%;
+  width: 50%;
+}
+
+.parrafofooter{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 10px;
+  z-index: 1;
+}
+
+.parrafofooter p{
+  margin-left: 25%;
+  width: 50%;
+  text-align: justify;
+}
+
+.logosfooter{
+  display: flex;
+  text-align: center;
+  z-index: 1;
+}
+
+.logosfooter p {
+  margin-left: 25%;
+  width: 50%;
+}
+
+.finfofooter{
+  display: flex;
+  text-align: center;
+  z-index: 1;
+}
+
+.finfofooter p{
+  margin-left: 25%;
+  width: 50%;
+}
+
+.iconfooter{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.uil{
+  color: #308E93;
+  font-size: 24px;
+}
+
+// RESPONSIVO
+@media screen and (max-width: 400px) {
+  #nuestroCarnaval {
+    width: 37vw;
+    height: 65vh;
+    margin-top: -35vh;
+    left: 15%;
+  }
+  #nuestroCarnaval img {
+    width: 105vw;
+    height: 95vh;
+  }
+  #parrafo {
+    margin-top: 58vh;
+    margin-left: 100%;
+    width: 340px;
+  }
+  .container {
+    min-height: 90vh;
+    width: 100%;
+  }
+  .footer img {
+    width: 35vw;
+    height: 30vh;
+  }
+  .parrafofooter p {
+    margin-left: 0;
+    width: 100%;
+  }
+  .imgfooter img {
+    margin-left: 20%;
+    width: 60%;
+  }
+  #btninscribete {
+    left: -70px;
+    width: 75vw;
+    height: 55vh;
+  }
+}
