@@ -43,7 +43,7 @@ export class SelectCategoryComponent implements OnInit {
       },
       {
         name: 'test3',
-        image: '../../../assets/img/galeria/1.png'
+        image: '../../../assets/img/galeria/1.jpg'
       },
 
     ]
