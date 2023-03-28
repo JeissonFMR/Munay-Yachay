@@ -76,12 +76,13 @@
   height: auto;
 }
 
-.img1 {
+.img1{
   border-radius: 50px 0px 0px 0px;
   @include image-properties-slider()
 }
 
-.img2{
+.img2 {
+  border-radius: 0px 0px 0px 0px;
   @include image-properties-slider()
 }
 
@@ -89,6 +90,8 @@
   border-radius: 0px 50px 0px 0px;
   @include image-properties-slider()
 }
+
+
 .img1:hover, .img2:hover, .img3:hover {
   transform: scale(1.3);
 }

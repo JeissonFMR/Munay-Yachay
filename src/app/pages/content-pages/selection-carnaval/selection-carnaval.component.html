@@ -18,13 +18,13 @@
     class="row1 position-relative d-flex justify-content-center align-items-center animate__animated animate__backInDown animate__delay-1s">
     <div class="col position-relative d-flex justify-content-around align-items-center flex-wrap">
 
-      <div class="mr-3 imgOne position-relative">
+      <div class="mr-3 imgOne position-relative" [matTooltip]="memoriesCarnaval" [matTooltipPosition]="position.value!">
         <a routerLink="/select-category"><img class="imagenBtns"
             src="../../../../assets/img/welcome/select-carnaval/boton memorias del ddcarnavalRecurso 58@mrkiss.svg"
             alt=""></a>
       </div>
 
-      <div class="imgTwo position-relative">
+      <div class="imgTwo position-relative" [matTooltip]="ourCarnaval" [matTooltipPosition]="position.value!">
         <a routerLink="/ourcarnaval"><img class="imagenBtns"
             src="../../../../assets/img/welcome/select-carnaval/botons2 ima nuestrodcarnavalRecurso 61@mrkiss.svg"
             alt=""></a>

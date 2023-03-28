@@ -48,7 +48,7 @@ export class LoginPageComponent implements OnInit {
             this._usuarioService.verificarLogin().subscribe(
                 (resp: any) => {
                     if (resp.status === true) {
-                        this.router.navigate(['/dashboard/dashboard1']);
+                        this.router.navigate(['/select-category']);
                     }
                 }
             );
@@ -73,7 +73,7 @@ export class LoginPageComponent implements OnInit {
                 if (resp.status === true) {
                     this.cargando = false;
                     swal('Petición éxitosa', resp.msg, 'success');
-                    this.router.navigate(['/dashboard/dashboard1']);
+                    this.router.navigate(['/select-category']);
                 } else {
                     this.cargando = false;
                     swal('Petición fallida', resp.msg, 'warning');

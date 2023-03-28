@@ -17,16 +17,16 @@ export class SelectCategoryComponent implements OnInit {
   ngOnInit() {
     this.sliderImagesCantoTierra = [
       {
-        name: 'test1',
-        image: '../../../assets/img/galeria/4.jpg'
+        name: 'Image 1',
+        image: '../../../assets/img/memory-carnaval/images/slider/canto-tierra/img_1.jpg'
       },
       {
-        name: 'test2',
-        image: '../../../assets/img/galeria/5.jpg'
+        name: 'Image 2',
+        image: '../../../assets/img/memory-carnaval/images/slider/canto-tierra/img_2.jpg'
       },
       {
-        name: 'test3',
-        image: '../../../assets/img/galeria/1.jpg'
+        name: 'Image 3',
+        image: '../../../assets/img/memory-carnaval/images/slider/canto-tierra/img_3.jpg'
       },
 
     ]
@@ -34,32 +34,44 @@ export class SelectCategoryComponent implements OnInit {
 
     this.sliderImagesDesfileMagno = [
       {
-        name: 'test1',
-        image: '../../../assets/img/galeria/4.jpg'
+        name: 'Image 1',
+        image: '../../../assets/img/memory-carnaval/images/slider/desfile-magno/img_1.jpg'
       },
       {
-        name: 'test2',
-        image: '../../../assets/img/galeria/5.jpg'
+        name: 'Image 2',
+        image: '../../../assets/img/memory-carnaval/images/slider/desfile-magno/img_2.jpg'
       },
       {
-        name: 'test3',
-        image: '../../../assets/img/galeria/1.jpg'
+        name: 'Image 3',
+        image: '../../../assets/img/memory-carnaval/images/slider/desfile-magno/img_3.jpg'
       },
+      {
+        name: 'Image 4',
+        image: '../../../assets/img/memory-carnaval/images/slider/desfile-magno/img_4.jpg'
+      },
+      {
+        name: 'Image 5',
+        image: '../../../assets/img/memory-carnaval/images/slider/desfile-magno/img_5.jpg'
+      }
 
     ]
 
     this.sliderImagesCarnavalito = [
       {
-        name: 'test1',
-        image: '../../../assets/img/galeria/4.jpg'
+        name: 'Image 1',
+        image: '../../../assets/img/memory-carnaval/images/slider/carnavalito/img_1.jpg'
       },
       {
-        name: 'test2',
-        image: '../../../assets/img/galeria/5.jpg'
+        name: 'Image 2',
+        image: '../../../assets/img/memory-carnaval/images/slider/carnavalito/img_2.jpg'
       },
       {
-        name: 'test3',
-        image: '../../../assets/img/galeria/1.jpg'
+        name: 'Image 3',
+        image: '../../../assets/img/memory-carnaval/images/slider/carnavalito/img_3.jpg'
+      },
+      {
+        name: 'Image 4',
+        image: '../../../assets/img/memory-carnaval/images/slider/carnavalito/img_4.jpg'
       },
 
     ]
