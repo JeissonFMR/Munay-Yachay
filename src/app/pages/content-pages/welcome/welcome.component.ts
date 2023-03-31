@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { MatSidenav } from '@angular/material';
 
 @Component({
   selector: 'app-welcome',
@@ -7,9 +8,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class WelcomeComponent implements OnInit {
 
+  @ViewChild('sidenav') sidenav: MatSidenav;
+
+  sidenavOpened = false;
+  sidenavMode = 'side';
   constructor() { }
 
   ngOnInit() {
+  }
+
+  ngAfterViewInit() {
+    this.sidenav.mode = 'side';
+    this.sidenav.fixedInViewport = true;
   }
 
 }

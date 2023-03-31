@@ -26,6 +26,9 @@ import { MaterialModule } from './materialAngular/material/material.module';
 import * as $ from 'jquery';
 import { ServiciosModule } from './servicios/servicios.module';
 import { BrowserModule } from '@angular/platform-browser';
+import { CantoTierraComponent } from './layouts/canto-tierra/canto-tierra.component';
+import { DesfileMagnoComponent } from './layouts/desfile-magno/desfile-magno.component';
+
 
 
 
@@ -39,6 +42,8 @@ export function createTranslateLoader(http: HttpClient) {
         AppComponent,
         FullLayoutComponent,
         ContentLayoutComponent,
+        CantoTierraComponent,
+        DesfileMagnoComponent,
     ],
     imports: [
         BrowserModule,

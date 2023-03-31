@@ -1,4 +1,8 @@
-// @import '~@fortawesome/fontawesome-free/css/all.min.css';
+@font-face {
+  font-family: "MiFuentePersonalizada";
+  src: url("../../../assets/fonts/FUENTES/SEGOE/segoeui.ttf") format("woff");
+}
+
 html,
 body {
   width: 100%;
@@ -6,7 +10,7 @@ body {
   margin: 0;
   padding: 0;
 }
-#cuerpo{
+#cuerpo {
   overflow: hidden;
 }
 #fondobody {
@@ -18,7 +22,7 @@ body {
   background-color: white;
 }
 
-#fondobody img{
+#fondobody img {
   object-fit: cover;
 }
 
@@ -68,7 +72,6 @@ body {
   height: 650px;
 }
 
-
 #parrafo {
   position: absolute;
   top: calc(50% - 175px);
@@ -79,6 +82,8 @@ body {
   transform: translateX(-50%);
   width: 375px;
   text-align: justify;
+  font-family: "MiFuentePersonalizada";
+  font-size: 21px;
 }
 
 .container {
@@ -105,7 +110,7 @@ body {
   height: 25vh;
 }
 
-.barrafooter{
+.barrafooter {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -113,7 +118,7 @@ body {
   z-index: 1;
 }
 
-.imgfooter{
+.imgfooter {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -126,7 +131,7 @@ body {
   width: 50%;
 }
 
-.parrafofooter{
+.parrafofooter {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -134,13 +139,13 @@ body {
   z-index: 1;
 }
 
-.parrafofooter p{
+.parrafofooter p {
   margin-left: 25%;
   width: 50%;
   text-align: justify;
 }
 
-.logosfooter{
+.logosfooter {
   display: flex;
   text-align: center;
   z-index: 1;
@@ -151,24 +156,24 @@ body {
   width: 50%;
 }
 
-.finfofooter{
+.finfofooter {
   display: flex;
   text-align: center;
   z-index: 1;
 }
 
-.finfofooter p{
+.finfofooter p {
   margin-left: 25%;
   width: 50%;
 }
 
-.iconfooter{
+.iconfooter {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
-.uil{
-  color: #308E93;
+.uil {
+  color: #308e93;
   font-size: 24px;
 }
 
