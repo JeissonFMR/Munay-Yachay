@@ -8,6 +8,9 @@ import { Component, OnInit } from '@angular/core';
 export class BienvenidaComponent implements OnInit {
 
   rutasA: Array<any> = [];
+
+
+  imagenesSlider: Array<any> = [];
   constructor() { }
 
   ngOnInit() {
@@ -37,6 +40,26 @@ export class BienvenidaComponent implements OnInit {
         span: 'Enlaces de Interés'
       }
     ]
+
+    this.imagenesSlider = [
+      {
+        imagen: 'https://via.placeholder.com/800x400?text=Imagen+2',
+        alt: 'Imagen 2'
+      },
+      {
+        imagen: 'https://via.placeholder.com/800x400?text=Imagen+3',
+        alt: 'Imagen 3'
+      },
+      {
+        imagen: 'https://via.placeholder.com/800x400?text=Imagen+4',
+        alt: 'Imagen 4'
+      },
+      {
+        imagen: 'https://via.placeholder.com/800x400?text=Imagen+5',
+        alt: 'Imagen 5'
+      }
+    ]
   }
+
 
 }
