@@ -1,4 +1,4 @@
-import { ChangeDetectorRef, Component, OnInit, ViewChild } from '@angular/core';
+import { ChangeDetectorRef, Component, OnInit, ViewChild, Input } from '@angular/core';
 import { MatSidenav } from '@angular/material';
 
 @Component({
@@ -13,7 +13,10 @@ export class SidenavShortComponent implements OnInit {
 
   constructor(private cdr: ChangeDetectorRef) { }
 
+  @Input() routes: any[];
+
   ngOnInit() {
+    console.log(this.routes);
   }
 
 

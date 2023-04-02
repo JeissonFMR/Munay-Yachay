@@ -12,14 +12,11 @@
             </div>
 
             <div class="iconos position-relative d-flex flex-column">
-              <img class="icon" src="../../../assets/img/newSidenav/iconos/1.svg" alt=""><span>Descripción</span>
-              <img class="icon" src="../../../../assets/img/newSidenav/iconos/2.svg" alt=""><span>Reseña
-                Histórica</span>
-              <img class="icon" src="../../../assets/img/newSidenav/iconos/3.svg" alt=""><span>Relatos</span>
-              <img class="icon" src="../../../assets/img/newSidenav/iconos/4.svg" alt=""><span>Reflexiones</span>
-              <img class="icon" src="../../../assets/img/newSidenav/iconos/5.svg" alt=""><span>Galería</span>
-              <img class="icon" src="../../../assets/img/newSidenav/iconos/6.svg" alt=""><span>Enlaces de
-                interés</span>
+              <div *ngFor="let route of routes">
+                <a>
+                  <img class="icon" [src]="route.image" alt=""><span (click)="route.action()">{{route.span}}</span>
+                </a>
+              </div>
               <img class="icon2" src="../../../assets/img/newSidenav/hovers/graficoComplemento.svg" alt="">
 
 

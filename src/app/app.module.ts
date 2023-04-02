@@ -33,45 +33,45 @@ import { DesfileMagnoComponent } from './layouts/desfile-magno/desfile-magno.com
 
 
 export function createTranslateLoader(http: HttpClient) {
-    return new TranslateHttpLoader(http, './assets/i18n/', '.json');
+  return new TranslateHttpLoader(http, './assets/i18n/', '.json');
 }
 
 
 @NgModule({
-    declarations: [
-        AppComponent,
-        FullLayoutComponent,
-        ContentLayoutComponent,
-        CantoTierraComponent,
-        DesfileMagnoComponent,
-    ],
-    imports: [
-        BrowserModule,
-        BrowserAnimationsModule,
-        MaterialModule,
-        StoreModule.forRoot({}),
-        AppRoutingModule,
-        SharedModule,
-        HttpClientModule,
-        ToastrModule.forRoot(),
-        NgbModule.forRoot(),
-        TranslateModule.forRoot({
-            loader: {
-                provide: TranslateLoader,
-                useFactory: (createTranslateLoader),
-                deps: [HttpClient]
-            }
-        }),
-        AgmCoreModule.forRoot({
-            apiKey: 'AIzaSyBr5_picK8YJK7fFR2CPzTVMj6GG1TtRGo'
-        }),
-        ServiciosModule
-    ],
-    providers: [
-        AuthService,
-        AuthGuard,
-        DragulaService
-    ],
-    bootstrap: [AppComponent]
+  declarations: [
+    AppComponent,
+    FullLayoutComponent,
+    ContentLayoutComponent,
+    CantoTierraComponent,
+    DesfileMagnoComponent,
+  ],
+  imports: [
+    BrowserModule,
+    BrowserAnimationsModule,
+    MaterialModule,
+    StoreModule.forRoot({}),
+    AppRoutingModule,
+    SharedModule,
+    HttpClientModule,
+    ToastrModule.forRoot(),
+    NgbModule.forRoot(),
+    TranslateModule.forRoot({
+      loader: {
+        provide: TranslateLoader,
+        useFactory: (createTranslateLoader),
+        deps: [HttpClient]
+      }
+    }),
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyBr5_picK8YJK7fFR2CPzTVMj6GG1TtRGo'
+    }),
+    ServiciosModule
+  ],
+  providers: [
+    AuthService,
+    AuthGuard,
+    DragulaService
+  ],
+  bootstrap: [AppComponent]
 })
 export class AppModule { }
