@@ -13,6 +13,9 @@ export class ContentCantoALaTierraComponent implements OnInit {
   // RUTAS UTILIZADAS EN SIDENAV
   rutasA: Array<any> = [];
 
+  //IMAGENES GALERÍA
+  imagenesGaleria: Array<any> = [];
+
   // INFORMACIÓN PARA VIDEOS DEL REPRODUCTOR
   infVideos: Array<any> = [];
 
@@ -125,6 +128,22 @@ export class ContentCantoALaTierraComponent implements OnInit {
         nombreVideo: 'Video 5',
         tiempo: '3:00'
       }
+    ]
+
+    this.imagenesGaleria = [
+      {
+        Img: '../../../assets/img/galeria/1.jpg',
+        alt: 'Imagen 1'
+      },
+      {
+        Img: '../../../assets/img/galeria/2.jpg',
+        alt: 'Imagen 1'
+      },
+      {
+        Img: '../../../assets/img/galeria/3.jpg',
+        alt: 'Imagen 1'
+      },
+
     ]
   }
 
