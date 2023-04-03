@@ -15,7 +15,8 @@
 
         <div class="contenidodescripcion d-flex justify-content-center align-items-center">
           <div class="descripcion w-50">
-            <p class="textDesc text-center pt-4">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fugit
+            <p class="textDesc text-center pt-4">DESCRIPCIÓN Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+              Fugit
               nesciunt
               atque fugiat
               tempore quo culpa ullam. Harum ipsa reprehenderit iure illum quibusdam natus aliquid, ab corporis aliquam
@@ -39,13 +40,16 @@
 
         <div class="row mt-5 m-0">
           <div class="col-md-5">
+
             <div class="contornoimg2Descripcion">
               <img class="imgTwo" src="../../../assets/img/canto-a-la-tierra/img-cantoTierra.jpg" alt="">
             </div>
           </div>
+
           <div class="col d-flex justify-content-center">
             <div class="contText2">
-              <p class="text2 text-justify">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Explicabo deleniti
+              <p class="text2 text-justify"> SEGUNDO TEXTO Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                Explicabo deleniti
                 quo
                 nesciunt
                 quibusdam, eius culpa ipsa tempora sunt quaerat odio repellat dolorem in nemo minus unde, distinctio
@@ -63,7 +67,8 @@
         <div class="row mt-5 m-0">
           <div class="col d-flex justify-content-center">
             <div class="contText2">
-              <p class="text2 text-center">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Explicabo deleniti
+              <p class="text2 text-center">ULTIMO TEXTO Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                Explicabo deleniti
                 quo
                 nesciunt
                 quibusdam, eius culpa ipsa tempora sunt quaerat odio repellat dolorem in nemo minus unde, distinctio
@@ -95,14 +100,15 @@
 
 
       <!-- SECCIÓN TRES  RELATOS-->
-      <div class="content d-flex flex-column" id="seccion3">
+      <div class="content d-flex flex-column mb-5" id="seccion3">
         <img src="../../../assets/img/canto-a-la-tierra/contentPages/relatos/relatos barraRecurso 114@mrkiss.svg" alt=""
           width="100%">
 
         <div class="row m-0">
           <div class="col d-flex justify-content-center">
             <div class="pt-4 textInicioRelato w-50 text-center">
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem quas ea perspiciatis? Delectus
+              <p>INCIO RELATOS Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem quas ea
+                perspiciatis? Delectus
                 unde numquam eum sapiente nulla quae! Obcaecati incidunt nisi maxime modi officia ipsum! Aliquam numquam
                 reiciendis neque.</p>
             </div>
@@ -110,9 +116,50 @@
         </div>
 
 
-        <div class="row m-0 mt-3">
-          <div class="col">COLUMNA1</div>
-          <div class="col-md-4">COLUMNS 2</div>
+        <div class="row m-0 mt-3 pl-5 pr-5">
+          <div class="col video  position-relative d-flex justify-content-center align-items-center">
+
+            <!-- DIV DONDE SALE LA REPRODUCCIÓN DE CADA VIDEO  -->
+            <div class="videos" #youtubePlayer>
+            </div>
+          </div>
+
+
+          <!-- INFORMACIÓN DEL VIDEO -->
+          <div class="col-md-3 relato d-flex flex-column">
+
+            <div class="texturaArriba">
+            </div>
+
+            <div class="d-flex flex-column" *ngFor="let video of infVideos">
+              <div class="contentInformacion d-flex flex-row">
+                <div class="contenedorCirculoImagen d-flex justify-content-center align-items-center">
+                  <div class="cirlce">
+                    <img class="imagenPersona" [src]="video.fotoPersona" alt="">
+                  </div>
+                </div>
+
+                <div class="info d-flex flex-direction-column pl-1">
+                  <div class="todaLaInfo">
+                    <a (click)="playVideo(video.idVideo)">
+                      <p class="nombrePersona m-0 p-0">{{video.nombrePersona}}</p>
+                      <p class="tituloVideo m-0 p-0">{{video.nombreVideo}}</p>
+                      <p class="tiempoVideo m-0 p-0">{{video.tiempo}}</p>
+                    </a>
+
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- <div *ngFor="let video of infVideos" class="a">
+              <a (click)="playVideo(video.idVideo)">{{video.nombre}}</a>
+            </div> -->
+
+          </div>
+
+
+
+
         </div>
       </div>
       <!-- FIN SECCIÓN TRES RELATOS -->

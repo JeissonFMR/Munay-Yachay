@@ -1,5 +1,8 @@
-import { Component, OnInit, ElementRef } from '@angular/core';
+import { Component, OnInit, ElementRef, ViewChild } from '@angular/core';
 
+
+
+declare const YT: any; // Para evitar errores de compilación
 @Component({
   selector: 'app-content-canto-ala-tierra',
   templateUrl: './content-canto-ala-tierra.component.html',
@@ -7,10 +10,45 @@ import { Component, OnInit, ElementRef } from '@angular/core';
 })
 export class ContentCantoALaTierraComponent implements OnInit {
 
+  // RUTAS UTILIZADAS EN SIDENAV
   rutasA: Array<any> = [];
 
+  // INFORMACIÓN PARA VIDEOS DEL REPRODUCTOR
+  infVideos: Array<any> = [];
+
+
+  // REPRODUCTOR DE VIDEO
+  @ViewChild('youtubePlayer') youtubePlayer: ElementRef;
+  player: any; // Almacena la instancia del reproductor de YouTube
 
   constructor(private elementRef: ElementRef) { }
+
+
+  ngAfterViewInit() {
+    // Llama a la función playVideo con el ID del video 1 al cargar el componente
+    this.playVideo('8_QY5gFQUTg');
+  }
+
+  playVideo(videoId: string) {
+    if (this.player) {
+      this.player.destroy(); // Destruye la instancia anterior del reproductor
+    }
+
+    this.player = new YT.Player(this.youtubePlayer.nativeElement, {
+      videoId: videoId,
+      playerVars: {
+        autoplay: 0,
+        iv_load_policy: 3,
+      },
+      events: {
+        'onReady': () => {
+          const duration = this.player.getDuration();
+          console.log("Duración del video:", duration, "segundos");
+        }
+      }
+    });
+
+  }
 
   scrollToElement(id: string) {
     const element = this.elementRef.nativeElement.querySelector('#' + id);
@@ -49,6 +87,44 @@ export class ContentCantoALaTierraComponent implements OnInit {
         span: 'Enlaces de Interés',
         action: (elementId: string) => this.scrollToElement('seccion6')
       },
+    ]
+
+    this.infVideos = [
+      {
+        idVideo: '8_QY5gFQUTg',
+        fotoPersona: '../../../assets/img/canto-a-la-tierra/contentPages/relatos/person/sinFoto.jpg',
+        nombrePersona: 'Pepito perez',
+        nombreVideo: 'Video 1',
+        tiempo: '3:00'
+      },
+      {
+        idVideo: 'BxuY9FET9Y4',
+        fotoPersona: '../../../assets/img/canto-a-la-tierra/contentPages/relatos/person/sinFoto.jpg',
+        nombrePersona: 'Pepito perez',
+        nombreVideo: 'Video 2',
+        tiempo: '3:00'
+      },
+      {
+        idVideo: 'EkHTsc9PU2A',
+        fotoPersona: '../../../assets/img/canto-a-la-tierra/contentPages/relatos/person/sinFoto.jpg',
+        nombrePersona: 'Pepito perez',
+        nombreVideo: 'Video 3',
+        tiempo: '3:00'
+      },
+      {
+        idVideo: 'yKNxeF4KMsY',
+        fotoPersona: '../../../assets/img/canto-a-la-tierra/contentPages/relatos/person/sinFoto.jpg',
+        nombrePersona: 'Pepito perez',
+        nombreVideo: 'Video 4',
+        tiempo: '3:00'
+      },
+      {
+        idVideo: 'yKNxeF4KMsY',
+        fotoPersona: '../../../assets/img/canto-a-la-tierra/contentPages/relatos/person/sinFoto.jpg',
+        nombrePersona: 'Pepito perez',
+        nombreVideo: 'Video 5',
+        tiempo: '3:00'
+      }
     ]
   }
 
