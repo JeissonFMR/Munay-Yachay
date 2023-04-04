@@ -180,9 +180,7 @@
         <div class="contorno d-flex justify-content-center align-items-center">
           <div class="containerImages">
             <section class="sectionSliderImg d-flex">
-
               <img *ngFor="let item of imagenesGaleria" class="sliderGaleria" [src]="item.Img" alt="">
-
             </section>
           </div>
         </div>
@@ -191,17 +189,64 @@
       <!-- FIN SECCIÓN CINCO  GALERÍA-->
 
 
+      <!-- SECCIÓN SEIS  ENLACES DE INTERES-->
+      <div class="contentEnlacesInteres" id="seccion6">
+        <img class="mb-5" src="../../../assets/img/canto-a-la-tierra/contentPages/enlacesInteres/enlacesInteres.png"
+          alt="" width="100%">
 
-      <section id="seccion6">
-        <h2>Sección 6 Enlaces interés</h2>
-        <p>Contenido de la sección 6</p>
-      </section>
+
+
+        <div class="contenedorT d-flex justify-content-center align-items-center">
+
+          <div class="contentImagen d-flex flex-row flex-wrap">
+
+            <div class="b pt-1" *ngFor="let interesImg of imagenesInteres">
+              <img class="imagen" [src]="interesImg.Img" [alt]="interesImg.alt">
+
+              <div class="textosA">
+                <p class="m-0 p-0 nombrePersonaInteres">{{interesImg.nombre}}</p>
+                <p class="m-0 p-0 tituloInteres">{{interesImg.titulo}}</p>
+                <p class="m-0 p-0 tiempoInteres">{{interesImg.tiempo}}</p>
+              </div>
+
+              <!-- <div class="b">
+                <img class="imagen"
+                  src="../../../assets/img/canto-a-la-tierra/contentPages/enlacesInteres/contornoEnlacesInteres.png"
+                  alt="Descripción de la imagen">
+              </div> -->
+
+            </div>
+
+
+
+
+
+
+            <!-- <div class="d-flex justify-content-center align-items-center flex-column">
+                <p class="m-0 p-0">Jeisson montenegro</p>
+                <p class="m-0 p-0">hola</p>
+                <p class="m-0 p-0">hola</p>
+              </div> -->
+
+
+
+
+
+
+          </div>
+
+        </div>
+
+
+      </div>
+      <!-- FIN SECCIÓN SEIS  ENLACES DE INTERES-->
 
 
       <div class="footer">
         <div class="contenidofooter">
           <img src="../../../assets/img/canto-a-la-tierra/footer/footer.svg" alt="footermunay" class="imgbodyfooter" />
-          <p class="textfooter">Información de las modalidades colectivos coreográficos, su definición, características
+          <p class="textfooter">Información de las modalidades colectivos coreográficos, su definición,
+            características
             y datos históricos. A partir de los testimonios de protagonistas de nuestra fiesta.</p>
           <div class="iconfooter">
             <p><i class="uil uil-facebook-f"></i></p>

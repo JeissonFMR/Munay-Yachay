@@ -34,6 +34,12 @@ $color-fondos-texto: #c66505;
   color: white;
 }
 
+@mixin infromacionI($font) {
+  font-size: 15px;
+  color: #00797b;
+  font-family: $font;
+}
+
 #seccion2 {
   background-color: blue;
   height: 800px;
@@ -41,11 +47,6 @@ $color-fondos-texto: #c66505;
 
 #seccion4 {
   background-color: yellow;
-  height: 800px;
-}
-
-#seccion6 {
-  background-color: red;
   height: 800px;
 }
 
@@ -241,19 +242,77 @@ body {
   padding: 10px;
 }
 
-.sectionSliderImg .sliderGaleria {
-  width: 0px;
-  flex-grow: 1;
-  object-fit: cover;
-  opacity: 0.8;
-  transition: 0.5s ease;
+.sectionSliderImg {
+  .sliderGaleria {
+    width: 0px;
+    flex-grow: 1;
+    object-fit: cover;
+    opacity: 0.8;
+    transition: 0.5s ease;
+  }
+}
+.sectionSliderImg {
+  .sliderGaleria:hover {
+    cursor: crosshair;
+    width: 50%;
+    opacity: 1;
+    filter: contrast(120%);
+  }
 }
 
-.sectionSliderImg .sliderGaleria:hover {
-  cursor: crosshair;
+//TODO: ENLACES DE INTERÉS
+
+.contenedorT {
+  // background-color: green;
+  width: 100%;
+  display: flex;
+}
+
+.b {
+  // border: 1px solid black;
   width: 50%;
-  opacity: 1;
-  filter: contrast(120%);
+  position: relative;
+}
+
+.contentImagen {
+  // background-color: blue;
+  width: 90%;
+}
+.contentImagen img {
+  width: 100%; /* La imagen se ajustará al ancho del div */
+  height: auto; /* La altura de la imagen se ajustará automáticamente */
+  display: block;
+}
+
+.textosA {
+  // background-color: red;
+  position: absolute; /* Establece la posición del div en relación al contenedor principal */
+  top: 50%; /* Coloca el borde superior del div en el 50% del contenedor principal */
+  left: 50%; /* Coloca el borde izquierdo del div en el 50% del contenedor principal */
+  transform: translate(-50%, -50%);
+}
+
+.nombrePersonaInteres {
+  @include infromacionI($fontBold);
+}
+
+.tituloInteres {
+  @include infromacionI($fontItalic);
+}
+
+.tituloInteres {
+  @include infromacionI($fontItalic);
+}
+.tiempoInteres {
+  @include infromacionI($fontRegular);
+}
+@media screen and(max-width: 768px) {
+  .b,
+  .textosA,
+  .contentImagen {
+    text-align: center;
+    width: 100%;
+  }
 }
 
 //footer

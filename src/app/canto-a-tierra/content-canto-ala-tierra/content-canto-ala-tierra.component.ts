@@ -16,6 +16,8 @@ export class ContentCantoALaTierraComponent implements OnInit {
   //IMAGENES GALERÍA
   imagenesGaleria: Array<any> = [];
 
+  imagenesInteres: Array<any> = [];
+
   // INFORMACIÓN PARA VIDEOS DEL REPRODUCTOR
   infVideos: Array<any> = [];
 
@@ -43,12 +45,6 @@ export class ContentCantoALaTierraComponent implements OnInit {
         autoplay: 0,
         iv_load_policy: 3,
       },
-      events: {
-        'onReady': () => {
-          const duration = this.player.getDuration();
-          console.log("Duración del video:", duration, "segundos");
-        }
-      }
     });
 
   }
@@ -143,6 +139,36 @@ export class ContentCantoALaTierraComponent implements OnInit {
         Img: '../../../assets/img/galeria/3.jpg',
         alt: 'Imagen 1'
       },
+
+    ]
+
+
+    this.imagenesInteres = [
+
+      {
+        Img: '../../../assets/img/canto-a-la-tierra/contentPages/enlacesInteres/contornoEnlacesInteres.png',
+        alt: 'Imagen 1',
+        nombre: 'Pepito perez',
+        titulo: 'Titulo de testeo...😀',
+        tiempo: '3:00'
+      },
+
+      {
+        Img: '../../../assets/img/canto-a-la-tierra/contentPages/enlacesInteres/contornoEnlacesInteres.png',
+        alt: 'Imagen 2',
+        nombre: 'Pepito perez',
+        titulo: 'Titulo de testeo...😀',
+        tiempo: '3:00'
+      },
+
+      {
+        Img: '../../../assets/img/canto-a-la-tierra/contentPages/enlacesInteres/contornoEnlacesInteres.png',
+        alt: 'Imagen 3',
+        nombre: 'Pepito perez',
+        titulo: 'Titulo de testeo...😀',
+        tiempo: '3:00'
+      },
+
 
     ]
   }
