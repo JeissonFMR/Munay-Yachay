@@ -1,18 +1,3 @@
-@font-face {
-  font-family: "regular";
-  src: url("../../../assets/fonts/FUENTES/SEGOE/segoeui.ttf");
-}
-
-@font-face {
-  font-family: "bold";
-  src: url("../../../assets/fonts/FUENTES/SEGOE/segoeuib.ttf");
-}
-
-@font-face {
-  font-family: "italic";
-  src: url("../../../assets/fonts/FUENTES/SEGOE/segoeuii.ttf");
-}
-
 //VARIABLES
 $color-purple: #b20c80;
 $fontRegular: "regular";
@@ -29,6 +14,12 @@ $color-fondos-texto: #c66505;
   object-fit: $object;
 }
 
+@mixin textoPequeño() {
+  font-size: 15px;
+  color: black;
+  font-family: "regular";
+}
+
 @mixin textoPerosna() {
   font-size: 13px;
   color: white;
@@ -38,16 +29,6 @@ $color-fondos-texto: #c66505;
   font-size: 15px;
   color: #00797b;
   font-family: $font;
-}
-
-#seccion2 {
-  background-color: blue;
-  height: 800px;
-}
-
-#seccion4 {
-  background-color: yellow;
-  height: 800px;
 }
 
 html,
@@ -151,16 +132,166 @@ body {
   left: -15px;
 }
 .text2 {
-  font-family: $fontRegular;
+  @include textoPequeño();
 }
 
 .contText2 {
   width: 70%;
 }
 
+//TODO: RESEÑA HISTORICA
+.contenttext1 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.text1resena {
+  text-align: center;
+  width: 45%;
+  @include textoPequeño();
+}
+.container2resena {
+  margin-top: 4%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.contenttext2 {
+  width: 48%;
+}
+.contenttext2 p {
+  text-align: justify;
+  margin: 4% 15% 0 20%;
+  @include textoPequeño();
+}
+
+.contentimg1 {
+  background-color: #b20c80;
+  border-radius: 50px 0 0 50px;
+  width: 80%;
+  height: 300px;
+  position: relative;
+}
+
+.container3resena {
+  margin-top: 4%;
+}
+.imgresena3 {
+  max-width: 100%;
+  height: auto;
+}
+.img2 {
+  @include imagenes(absolute, 100%, 100%, 10px, cover);
+  border-radius: 50px 0 0 50px;
+}
+.contentimg2resena {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: auto;
+  height: auto;
+  padding: 10px 10px 10px 0;
+}
+.contendioresena {
+  background-color: #b20c80;
+  width: 80%;
+  min-height: 300px;
+  position: relative;
+  border-radius: 0 50px 50px 0;
+}
+
+.img3 {
+  width: 100%;
+  margin-right: 20px;
+}
+
+.img4 {
+  @include imagenes(absolute, 100%, 100%, 10px, cover);
+  border-radius: 0 50px 50px 0;
+}
+
+.containerfinalresena {
+  margin-top: 3%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.textfinalresena {
+  text-align: center;
+  width: 70%;
+  @include textoPequeño();
+}
+
+.imgfinal {
+  width: 20%;
+}
+
+.mrgtop {
+  margin-top: 5%;
+}
+.mrgbottom {
+  margin-bottom: 3%;
+}
+.slider-container {
+  position: relative;
+  width: 100%;
+  height: 500px;
+}
+
+.slider {
+  position: absolute;
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.slider img {
+  width: calc(33.33% - 10px);
+  margin: 5px;
+  height: calc(50% - 10px);
+  object-fit: cover;
+}
+
+.slider-controls {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  z-index: 1;
+}
+
+.prev-button,
+.next-button {
+  background-color: transparent;
+  border: none;
+  font-size: 30px;
+  cursor: pointer;
+  outline: none;
+}
+
+.prev-button:hover,
+.next-button:hover {
+  color: gray;
+}
+
+.prev-button {
+  margin-left: 20px;
+}
+
+.next-button {
+  margin-right: 20px;
+}
+
 //TODO: RELATOS
 .textInicioRelato {
-  font-family: $fontRegular;
+  @include textoPequeño();
 }
 
 .video {
@@ -225,6 +356,55 @@ body {
   font-family: $fontItalic;
 }
 .tiempoVideo {
+  @include textoPerosna();
+  font-family: $fontRegular;
+}
+
+//REFLEXIONES
+.contentinf {
+  position: relative;
+}
+
+.contentinf img:nth-of-type(2) {
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 100%;
+  margin: 2.2% 0 0 6.1%;
+  width: 45.9%;
+  height: 45%;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+  background-color: gray;
+  width: 5vh;
+  height: 5vh;
+  border-radius: 50%;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.textperfil {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 85%;
+  padding: 20px;
+  text-align: center;
+}
+
+.textperfil h5 {
+  text-align: end;
+  margin: 0 0 7% 0;
+  @include textoPerosna();
+  font-family: $fontBold;
+}
+
+.textperfil h6 {
+  text-align: end;
+  margin: 0 0 -7% 0;
+  padding: 0;
+  text-align: justify;
   @include textoPerosna();
   font-family: $fontRegular;
 }

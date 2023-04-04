@@ -2,5 +2,21 @@
 @import '@angular/material/prebuilt-themes/indigo-pink.css';
 
 .bg-purple-munay {
-    background-color: #602577;
+  background-color: #602577;
+}
+
+
+@font-face {
+  font-family: "regular";
+  src: url("./assets/fonts/FUENTES/SEGOE/segoeui.ttf");
+}
+
+@font-face {
+  font-family: "bold";
+  src: url("./assets/fonts/FUENTES/SEGOE/segoeuib.ttf");
+}
+
+@font-face {
+  font-family: "italic";
+  src: url("./assets/fonts/FUENTES/SEGOE/segoeuii.ttf");
 }
