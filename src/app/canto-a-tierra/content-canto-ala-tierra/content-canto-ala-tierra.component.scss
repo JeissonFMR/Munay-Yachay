@@ -384,29 +384,33 @@ body {
   top: 50%;
   transform: translateY(-50%);
 }
-.textperfil {
+.textotitulo {
+  font-family: "bold";
   position: absolute;
-  bottom: 0;
-  right: 0;
-  width: 85%;
-  padding: 20px;
+  width: 100%;
+  top: 43%;
+  left: 70%;
+  transform: translate(-50%, -50%);
+  font-size: 13px;
   text-align: center;
 }
-
-.textperfil h5 {
-  text-align: end;
-  margin: 0 0 7% 0;
-  @include textoPerosna();
-  font-family: $fontBold;
+.textotitulocursiva {
+  margin: 0;
+  padding: 0;
+  font-size: 13px;
+  font-family: "italic";
 }
 
-.textperfil h6 {
-  text-align: end;
-  margin: 0 0 -7% 0;
-  padding: 0;
+.textocontenido {
+  position: absolute;
+  width: 56%;
+  top: 71%;
+  left: 55%;
+  transform: translate(-50%, -50%);
+  font-size: 13px;
+  font-family: "regular";
+  line-height: 1.5;
   text-align: justify;
-  @include textoPerosna();
-  font-family: $fontRegular;
 }
 
 //TODO: GALERÍA
