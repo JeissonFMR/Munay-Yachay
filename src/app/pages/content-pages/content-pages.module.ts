@@ -14,26 +14,31 @@ import { RegisterPageComponent } from './register/register-page.component';
 import { MaterialModule } from 'app/materialAngular/material/material.module';
 import { WelcomeComponent } from './welcome/welcome.component';
 import { SelectionCarnavalComponent } from './selection-carnaval/selection-carnaval.component';
+import { ModalWelcomeComponent } from './modal-welcome/modal-welcome.component';
 
 
 @NgModule({
-    imports: [
-        CommonModule,
-        ContentPagesRoutingModule,
-        FormsModule,
-        ReactiveFormsModule,
-        MaterialModule
-    ],
-    declarations: [
-        ComingSoonPageComponent,
-        ErrorPageComponent,
-        ForgotPasswordPageComponent,
-        LockScreenPageComponent,
-        LoginPageComponent,
-        MaintenancePageComponent,
-        RegisterPageComponent,
-        WelcomeComponent,
-        SelectionCarnavalComponent
-    ]
+  imports: [
+    CommonModule,
+    ContentPagesRoutingModule,
+    FormsModule,
+    ReactiveFormsModule,
+    MaterialModule
+  ],
+  declarations: [
+    ComingSoonPageComponent,
+    ErrorPageComponent,
+    ForgotPasswordPageComponent,
+    LockScreenPageComponent,
+    LoginPageComponent,
+    MaintenancePageComponent,
+    RegisterPageComponent,
+    WelcomeComponent,
+    SelectionCarnavalComponent,
+    ModalWelcomeComponent,
+  ],
+  entryComponents: [
+    ModalWelcomeComponent // Agregar el componente aquí
+  ]
 })
 export class ContentPagesModule { }

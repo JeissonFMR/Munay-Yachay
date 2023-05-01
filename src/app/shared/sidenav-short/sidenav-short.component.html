@@ -14,10 +14,27 @@
             <div class="iconos position-relative d-flex flex-column">
               <div *ngFor="let route of routes">
                 <a>
-                  <img class="icon" [src]="route.image" alt=""><span (click)="route.action()">{{route.span}}</span>
+                  <img class="icon" [src]="route.image" alt=""><span (click)="route.action()"><ng-container
+                      *ngIf="route.span !== 'Ver más'; else redirect">
+                      {{route.span}}
+                    </ng-container>
+
+                    <ng-template #redirect>
+                      <!-- Redireccionar a otra página aquí -->
+                      <a class="verMas" [routerLink]="['/cantoalatierra/content']">Ver más</a>
+                    </ng-template>
+                  </span>
                 </a>
               </div>
+
+              <a (click)="cerrarSesion()">
+                <img class="icon" src="../../../assets/img/newSidenav/hovers/graficoComplemento.svg" alt=""><span>Cerrar
+                  sesión</span>
+              </a>
+
               <img class="icon2" src="../../../assets/img/newSidenav/hovers/graficoComplemento.svg" alt="">
+
+
 
 
             </div>

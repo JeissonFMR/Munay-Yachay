@@ -1,5 +1,8 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
-import { MatSidenav } from '@angular/material';
+import { ChangeDetectorRef, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { MatDialog, MatSidenav } from '@angular/material';
+import { ModalWelcomeComponent } from '../modal-welcome/modal-welcome.component';
+
+
 
 @Component({
   selector: 'app-welcome',
@@ -8,18 +11,29 @@ import { MatSidenav } from '@angular/material';
 })
 export class WelcomeComponent implements OnInit {
 
-  @ViewChild('sidenav') sidenav: MatSidenav;
+  // @ViewChild('sidenav') sidenav: MatSidenav;
 
-  sidenavOpened = false;
-  sidenavMode = 'side';
-  constructor() { }
+  // sidenavOpened = false;
+  // sidenavMode = 'side';
+  constructor(public dialog: MatDialog, private cdRef: ChangeDetectorRef) { }
 
   ngOnInit() {
+    this.openDialog()
   }
 
-  ngAfterViewInit() {
-    this.sidenav.mode = 'side';
-    this.sidenav.fixedInViewport = true;
-  }
+  // ngAfterViewInit() {
+  //   this.sidenav.mode = 'side';
+  //   this.sidenav.fixedInViewport = true;
+  // }
 
+
+  openDialog() {
+    const dialogRef = this.dialog.open(ModalWelcomeComponent);
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed');
+    });
+
+
+  }
 }
