@@ -1,3 +1,112 @@
-<p>
-  bienvenida-magno works!
-</p>
+<div id="boybanerini">
+  <div class="boybaner">
+    <div class="contenedor">
+      <img src="../../../assets/img/canto-a-la-tierra/baner3.png" alt="baner" id="banner" />
+      <img src="../../../assets/img/desfile-magno/desfile magnoRecurso 75@mrkiss.svg" alt="logo header"
+        id="logoheader" />
+    </div>
+
+    <div class="container-fluid">
+
+
+      <div class="content">
+        <section class="d-flex justify-content-between seccciones flex-wrap mb-3">
+          <img class="imgSeccion" src="../../../assets/img/desfile-magno/disfrazRecurso 132@mrkiss.png"
+            alt="DisfrazIndividual" [matTooltip]="disfraz">
+
+          <img class="imgSeccion" src="../../../assets/img/desfile-magno/compaRecurso 3.png" alt="Comparza"
+            [matTooltip]="comparza">
+
+          <img class="imgSeccion" src="../../../assets/img/desfile-magno/MurgaRecurso 128@mrkiss.png" alt="murga"
+            [matTooltip]="murga">
+
+          <img class="imgSeccion" src="../../../assets/img/desfile-magno/carroRecurso 4.png" alt="carroza"
+            [matTooltip]="carroza">
+
+          <img class="imgSeccion" src="../../../assets/img/desfile-magno/no motorRecurso 2.png" alt="carrozaNo"
+            [matTooltip]="carrozaNo">
+        </section>
+        <p class="text1">
+          PRIMERO Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eveniet ut excepturi minima? Aliquam nostrum
+          maxime ad quidem? Eaque reprehenderit mollitia omnis illum! Aliquam nulla veniam quod eum et nisi molestiae.
+
+        </p>
+      </div>
+
+
+
+
+      <div class="content1">
+        <div class="col1">
+          <img class="imgcol1" src="../../../assets/img/canto-a-la-tierra/paraque.svg" alt="Para que" />
+          <p class="text2">En esta sección encontrarás información sobre las propuestas artísticas para los momentos de
+            inscripción,
+            acreditación y de audición artística.
+            Que además de sistematizar el proceso aportará a concentrar la información de la trayectoria de los
+            colectivos coreográficos.
+          </p>
+        </div>
+        <div class="col2 position-relative">
+          <img src="../../../assets/img/canto-a-la-tierra/barraAzul.svg" alt="" class="pb-3">
+          <div class="contorno">
+            <img class="t" src="../../../assets/img/canto-a-la-tierra/img1derecha.jpg" alt="">
+          </div>
+        </div>
+      </div>
+
+      <div class="content2 mt-5 d-flex justify-content-center align-items-center flex-column">
+        <img src="../../../assets/img/canto-a-la-tierra/paraquien.svg" alt="Para quien" class="imgparaquien" />
+        <p class="text3">Gestores, artistas y creadores vinculados con las agrupaciones y organizaciones culturales
+          interesadas en participar en el Canto a la Tierra a través de los colectivos coreográficos.</p>
+      </div>
+
+      <div class="contentSlider ">
+        <div id="myCarousel" class="carousel slide" data-ride="carousel">
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img src="../../../assets/img/galeria/1.jpg" alt="Imagen 1">
+            </div>
+
+            <div class="carousel-item" *ngFor="let slider of imagenesSlider">
+              <img [src]="slider.imagen" [alt]="slider.alt">
+            </div>
+
+          </div>
+          <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Anterior</span>
+          </a>
+          <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Siguiente</span>
+          </a>
+        </div>
+      </div>
+
+
+
+
+
+      <div class="footer">
+        <div class="contenidofooter">
+          <img src="../../../assets/img/desfile-magno/fooder munayRecurso 67@mrkiss.svg" alt="footermunay"
+            class="imgbodyfooter" />
+          <p class="textfooter">Información de las modalidades colectivos coreográficos, su definición, características
+            y datos históricos. A partir de los testimonios de protagonistas de nuestra fiesta.</p>
+          <div class="iconfooter">
+            <p><i class="uil uil-facebook-f"></i></p>
+            <p><i class="uil uil-twitter"></i></p>
+            <p><i class="uil uil-instagram"></i></p>
+            <p><i class="uil uil-youtube"></i></p>
+          </div>
+          <p class="textfooterfinal"><b>@MUNAYYACHAY</b></p>
+        </div>
+      </div>
+
+    </div>
+
+
+
+
+  </div>
+</div>

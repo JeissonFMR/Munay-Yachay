@@ -1,0 +1,199 @@
+@font-face {
+  font-family: "bold";
+  src: url("../../../assets/fonts/FUENTES/SEGOE/seguisb.ttf") format("woff");
+}
+
+.text1,
+.text2,
+.text3 {
+  font-size: 21px;
+  font-family: "regular";
+}
+
+html,
+body {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+#boybanerini {
+  margin: 0 !important;
+  padding: 0 !important;
+  overflow: hidden;
+  background-color: white;
+  background-image: url("../../../assets/img/canto-a-la-tierra/texture-wall.svg");
+  display: flex;
+  justify-content: center;
+}
+.boybaner {
+  margin-top: -2px !important;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  max-width: 90%;
+  padding: 0;
+  background-color: #d02887;
+  // border: 2px solid red;
+  box-shadow: 0px 10px 55px black;
+
+  border-radius: 50px;
+  margin-bottom: 60px;
+}
+.contenedor {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  // background-color: green;
+}
+
+#banner {
+  margin-top: 2%;
+  position: absolute;
+  left: 0;
+  width: 100%;
+}
+#logoheader {
+  margin-top: 2%;
+  width: 60%;
+  height: 45%;
+  margin-bottom: 10px;
+  z-index: 1;
+}
+.container-fluid {
+  width: 100%;
+  min-height: 120vh;
+  display: flex;
+  flex-direction: column;
+  z-index: 1;
+  // background-color: blue;
+  margin: 0;
+  padding: 0;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.seccciones {
+  width: 90%;
+}
+
+.imgSeccion {
+  cursor: pointer;
+  width: 180px;
+  height: 100px;
+  filter: drop-shadow(8px 8px 6px white);
+}
+
+.imgSeccion:hover {
+  filter: drop-shadow(8px 8px 6px #009096);
+}
+
+.text1 {
+  text-align: justify;
+  width: 40%;
+  // margin-top: -10%;
+}
+
+.text2 {
+  text-align: justify;
+}
+.content1 {
+  display: flex;
+  justify-content: space-between;
+}
+.col1 {
+  padding-left: 10%;
+  width: 40%;
+  height: 20%;
+}
+.imgcol1 {
+  padding-top: 15%;
+}
+
+.col2 {
+  // border: 1px solid green;
+  width: 50%;
+  height: 15%;
+}
+
+.contorno {
+  background-color: #009096;
+  // background-image: url("../../../assets/img/canto-a-la-tierra/contonoImg1.svg");
+  background-size: cover;
+  width: 100%;
+  height: 300px;
+  border-radius: 60px 0 0 60px;
+}
+
+.t {
+  object-fit: cover;
+  border-radius: 70px 0 0 70px;
+  padding: 10px 0 10px 10px;
+  width: 100%;
+  height: 100%;
+}
+
+//PARA QUIEN
+
+.imgparaquien {
+  width: 40%;
+}
+.text3 {
+  width: 38%;
+  text-align: center;
+  margin-bottom: 20%;
+}
+
+.contentSlider {
+  // height: 100%; /* ajusta la altura según tus necesidades */
+}
+.carousel-item img {
+  width: 100%; /* establece el ancho de la imagen al 100% */
+  height: 200px; /* establece la altura de la imagen al 100% */
+  object-fit: cover; /* para que la imagen se ajuste y cubra todo el slider */
+}
+
+//footer
+
+.footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 10px;
+  z-index: 1;
+}
+.contenidofooter {
+  width: 25%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.imgbodyfooter {
+  margin: 0;
+  padding: 0;
+}
+.textfooter {
+  text-align: center;
+  padding: 0;
+  margin: 0;
+}
+.iconfooter {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+}
+
+.uil {
+  color: #308e93;
+  font-size: 24px;
+}
