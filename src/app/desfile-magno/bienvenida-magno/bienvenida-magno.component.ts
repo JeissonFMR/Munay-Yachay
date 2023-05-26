@@ -26,19 +26,19 @@ export class BienvenidaMagnoComponent implements OnInit {
   ngOnInit() {
     this.imagenesSlider = [
       {
-        imagen: 'https://via.placeholder.com/800x400?text=Imagen+2',
+        imagen: '../../../assets/img/desfile-magno/fotografiasCarnaval/_MG_7575.jpg',
         alt: 'Imagen 2'
       },
       {
-        imagen: 'https://via.placeholder.com/800x400?text=Imagen+3',
+        imagen: '../../../assets/img/desfile-magno/fotografiasCarnaval/_MG_9261.jpg',
         alt: 'Imagen 3'
       },
       {
-        imagen: 'https://via.placeholder.com/800x400?text=Imagen+4',
+        imagen: '../../../assets/img/desfile-magno/fotografiasCarnaval/_MG_9670.jpg',
         alt: 'Imagen 4'
       },
       {
-        imagen: 'https://via.placeholder.com/800x400?text=Imagen+5',
+        imagen: '../../../assets/img/desfile-magno/fotografiasCarnaval/_MG_9482.jpg',
         alt: 'Imagen 5'
       }
     ]

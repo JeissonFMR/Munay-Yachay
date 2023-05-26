@@ -10,27 +10,30 @@
 
 
       <div class="content">
+
+        <p class="text1">
+          Una cordial bienvenida a Munay Yachay – Saber Gozar; en este módulo encontrarás información valiosa sobre el
+          tradicional desfile del “día de blancos”, el 6 de enero, popularmente conocido como desfile magno.
+        </p>
+
         <section class="d-flex justify-content-between seccciones flex-wrap mb-3">
           <img class="imgSeccion" src="../../../assets/img/desfile-magno/disfrazRecurso 132@mrkiss.png"
-            alt="DisfrazIndividual" [matTooltip]="disfraz">
+            alt="DisfrazIndividual" [matTooltip]="disfraz" [routerLink]="['/desfilemagno/disfraz-individual']"
+            routerLinkActive="router-link-active">
 
           <img class="imgSeccion" src="../../../assets/img/desfile-magno/compaRecurso 3.png" alt="Comparza"
-            [matTooltip]="comparza">
+            [matTooltip]="comparza" [routerLink]="['/desfilemagno/comparza']">
 
           <img class="imgSeccion" src="../../../assets/img/desfile-magno/MurgaRecurso 128@mrkiss.png" alt="murga"
-            [matTooltip]="murga">
+            [matTooltip]="murga" [routerLink]="['/desfilemagno/murga']">
 
           <img class="imgSeccion" src="../../../assets/img/desfile-magno/carroRecurso 4.png" alt="carroza"
-            [matTooltip]="carroza">
+            [matTooltip]="carroza" [routerLink]="['/desfilemagno/carroza']">
 
           <img class="imgSeccion" src="../../../assets/img/desfile-magno/no motorRecurso 2.png" alt="carrozaNo"
-            [matTooltip]="carrozaNo">
+            [matTooltip]="carrozaNo" [routerLink]="['/desfilemagno/carroza-no-motorizada']">
         </section>
-        <p class="text1">
-          PRIMERO Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eveniet ut excepturi minima? Aliquam nostrum
-          maxime ad quidem? Eaque reprehenderit mollitia omnis illum! Aliquam nulla veniam quod eum et nisi molestiae.
 
-        </p>
       </div>
 
 
@@ -39,32 +42,32 @@
       <div class="content1">
         <div class="col1">
           <img class="imgcol1" src="../../../assets/img/canto-a-la-tierra/paraque.svg" alt="Para que" />
-          <p class="text2">En esta sección encontrarás información sobre las propuestas artísticas para los momentos de
-            inscripción,
-            acreditación y de audición artística.
-            Que además de sistematizar el proceso aportará a concentrar la información de la trayectoria de los
-            colectivos coreográficos.
+          <p class="text2">En esta sección encontrarás información para conocer, de primera mano, una gama de proyectos
+            creativos que anualmente se generan desde cada una de las modalidades artísticas del carnaval.
+            Cada propuesta busca un cupo para participar en el desfile magno, en sus diferentes etapas de registro,
+            inscripción, acreditación, evaluación y participación.
+
           </p>
         </div>
         <div class="col2 position-relative">
           <img src="../../../assets/img/canto-a-la-tierra/barraAzul.svg" alt="" class="pb-3">
           <div class="contorno">
-            <img class="t" src="../../../assets/img/canto-a-la-tierra/img1derecha.jpg" alt="">
+            <img class="t" src="../../../assets/img/desfile-magno/fotografiasCarnaval/_MG_9482.jpg" alt="">
           </div>
         </div>
       </div>
 
       <div class="content2 mt-5 d-flex justify-content-center align-items-center flex-column">
         <img src="../../../assets/img/canto-a-la-tierra/paraquien.svg" alt="Para quien" class="imgparaquien" />
-        <p class="text3">Gestores, artistas y creadores vinculados con las agrupaciones y organizaciones culturales
-          interesadas en participar en el Canto a la Tierra a través de los colectivos coreográficos.</p>
+        <p class="text3">La comunidad en general, docentes, estudiantes, gestores, artistas y creadores vinculados con
+          proyectos, agrupaciones y organizaciones culturales interesadas en el “desfile Magno”.</p>
       </div>
 
       <div class="contentSlider ">
         <div id="myCarousel" class="carousel slide" data-ride="carousel">
           <div class="carousel-inner">
             <div class="carousel-item active">
-              <img src="../../../assets/img/galeria/1.jpg" alt="Imagen 1">
+              <img src="../../../assets/img/desfile-magno/fotografiasCarnaval/_MG_9670.jpg" alt="Imagen 1">
             </div>
 
             <div class="carousel-item" *ngFor="let slider of imagenesSlider">
@@ -91,8 +94,9 @@
         <div class="contenidofooter">
           <img src="../../../assets/img/desfile-magno/fooder munayRecurso 67@mrkiss.svg" alt="footermunay"
             class="imgbodyfooter" />
-          <p class="textfooter">Información de las modalidades colectivos coreográficos, su definición, características
-            y datos históricos. A partir de los testimonios de protagonistas de nuestra fiesta.</p>
+          <p class="textfooter">En esta sección encontrarás información sobre cada una de las modalidades artísticas del
+            carnaval, su descripción, principales características, datos históricos y datos de los maestros y
+            protagonistas de la fiesta, así como de sus propuestas artísticas destacadas.</p>
           <div class="iconfooter">
             <p><i class="uil uil-facebook-f"></i></p>
             <p><i class="uil uil-twitter"></i></p>

@@ -21,11 +21,6 @@ export class WelcomeComponent implements OnInit {
     this.openDialog()
   }
 
-  // ngAfterViewInit() {
-  //   this.sidenav.mode = 'side';
-  //   this.sidenav.fixedInViewport = true;
-  // }
-
 
   openDialog() {
     const dialogRef = this.dialog.open(ModalWelcomeComponent);
